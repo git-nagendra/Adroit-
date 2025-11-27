@@ -26,24 +26,6 @@ function setActiveMenu() {
 setActiveMenu();
 
 
-/* ==========================================================
-   SIDEBAR TOGGLE (MOBILE)
-========================================================== */
-const menuToggle = document.getElementById("menuToggle");
-const sidebar = document.querySelector(".sidebar");
-const overlay = document.getElementById("mobileOverlay");
-
-menuToggle.addEventListener("click", () => {
-  if (window.innerWidth <= 820) {
-    sidebar.classList.toggle("active");
-    overlay.classList.toggle("show");
-  }
-});
-
-overlay.addEventListener("click", () => {
-  sidebar.classList.remove("active");
-  overlay.classList.remove("show");
-});
 
 
 /* ==========================================================
@@ -97,71 +79,71 @@ document.addEventListener("click", e => {
 
 
 
-// Get elements
-const notificationBtn = document.getElementById("notificationBtn");
-const notificationDropdown = document.getElementById("notificationDropdown");
-const profileBtn = document.getElementById("profileBtn");
-const profileDropdown = document.getElementById("profileDropdown");
 
-// Toggle notification dropdown
-notificationBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  notificationDropdown.classList.toggle("show");
-  profileDropdown.classList.remove("show");
-});
+// Function to initialize all custom dropdowns
+function initCustomDropdowns(container = document) {
+  const dropdowns = container.querySelectorAll(".custom-dropdown");
 
-// Toggle profile dropdown
-profileBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  profileDropdown.classList.toggle("show");
-  notificationDropdown.classList.remove("show");
-});
+  dropdowns.forEach(dropdown => {
+    // Skip if already initialized
+    if (dropdown.dataset.initialized) return;
+    dropdown.dataset.initialized = true;
+
+    const selected = dropdown.querySelector(".dropdown-selected");
+    const optionsContainer = dropdown.querySelector(".dropdown-options");
+    const options = dropdown.querySelectorAll(".dropdown-option");
+    const hiddenInput = dropdown.querySelector("input[type='hidden']");
+    const arrow = selected.querySelector(".dropdown-arrow svg");
+
+    // Toggle dropdown open/close
+    selected.addEventListener("click", () => {
+      // Close all other dropdowns
+      document.querySelectorAll(".custom-dropdown.open").forEach(dd => {
+        if (dd !== dropdown) {
+          dd.classList.remove("open");
+          dd.querySelector(".dropdown-options").style.display = "none";
+        }
+      });
+
+      // Toggle this dropdown
+      dropdown.classList.toggle("open");
+      optionsContainer.style.display = dropdown.classList.contains("open") ? "block" : "none";
+    });
+
+    // Select an option
+    options.forEach(option => {
+      option.addEventListener("click", () => {
+        // Remove active from all options in this dropdown
+        options.forEach(opt => opt.classList.remove("active"));
+
+        // Set clicked option as active
+        option.classList.add("active");
+
+        // Update selected text
+        selected.childNodes[0].nodeValue = option.textContent;
+
+        // Update hidden input for form submission
+        hiddenInput.value = option.dataset.value;
+
+        // Close dropdown
+        dropdown.classList.remove("open");
+        optionsContainer.style.display = "none";
+      });
+    });
+  });
+}
 
 // Close dropdowns when clicking outside
-document.addEventListener("click", () => {
-  notificationDropdown.classList.remove("show");
-  profileDropdown.classList.remove("show");
-});
-
-// Prevent dropdown from closing when clicking inside
-notificationDropdown.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
-
-profileDropdown.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
-
-// Handle notification item clicks
-document.querySelectorAll(".notification-item").forEach((item) => {
-  item.addEventListener("click", () => {
-    item.classList.remove("unread");
-    // Update badge count
-    const badge = document.querySelector(".notification-badge");
-    const unreadCount = document.querySelectorAll(
-      ".notification-item.unread"
-    ).length;
-    if (unreadCount > 0) {
-      badge.textContent = unreadCount;
-    } else {
-      badge.style.display = "none";
+document.addEventListener("click", (e) => {
+  document.querySelectorAll(".custom-dropdown.open").forEach(dropdown => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("open");
+      dropdown.querySelector(".dropdown-options").style.display = "none";
     }
   });
 });
 
-// Handle profile dropdown item clicks
-document.querySelectorAll(".profile-dropdown-item").forEach((item) => {
-  item.addEventListener("click", () => {
-    const text = item.textContent.trim();
-    if (text === "Sign Out") {
-      alert("Signing out...");
-      // Add your sign out logic here
-    } else {
-      alert(`Navigating to: ${text}`);
-      // Add your navigation logic here
-    }
-  });
+// Initialize dropdowns on page load
+document.addEventListener("DOMContentLoaded", () => {
+  initCustomDropdowns();
 });
-
-
-
