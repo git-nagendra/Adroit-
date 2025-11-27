@@ -46,8 +46,8 @@
 
             <div class="submenu">
               <a class="sub-item" href="new-case.html" data-page="New Case">New Case</a>
-              <a class="sub-item" href="#" data-page="sales">Allocation</a>
-              <a class="sub-item" href="#" data-page="reports">Report</a>
+              <a class="sub-item" href="view-case.html" data-page="sales">View Case</a>
+              <a class="sub-item" href="detail.html" data-page="reports">Report</a>
             </div>
           </div>
 
@@ -66,7 +66,7 @@
       </aside>
 
       <!-- MAIN CONTENT -->
-      <main class="main">
+      <main class="main container-fluid px-2">
         <!-- TOPBAR -->
         <div
           class="topbar d-flex align-items-center justify-content-between flex-md-nowrap flex-wrap gap-3"
@@ -187,13 +187,10 @@
         </div>
 
         <!-- MAIN PAGE CONTENT -->
-        <div id="pageContent" class="mt-3">
-          <!-- HOME -->
-          <div id="homePage" class="contentPage">
-            
-            <h3 class="fw-bold mb-3">Dashboard</h3>
-            <div class="row g-4">
-              <div class="col-lg-4">
+        <div id="pageContent" class="mt-3 ">
+         <h3 class="fw-bold mb-3">Dashboard</h3>
+            <div class="row g-4 overflow-hidden">
+              <div class="col-lg-4 overflow-hidden">
                 <div class="card p-4 h-100">
                   <div
                     class="d-flex justify-content-between align-items-center mb-2"
@@ -478,272 +475,7 @@
                 </div>
               </form>
             </div>
-          </div>
 
-          <!-- ANALYTICS -->
-          <div id="analyticsPage" class="contentPage d-none">
-            <h3 class="fw-bold">Analytics</h3>
-            <p>Performance insights and chart data.</p>
-            <div class="card mt-3">
-              <div
-                class="Analytics rounded"
-                style="position: relative; overflow: hidden"
-              >
-                <!-- Tab Bar -->
-                <div class="tab-bar pt-2">
-                  <button class="tab active" data-tab="users">Users</button>
-                  <button class="tab" data-tab="team">Team Members</button>
-                  <button class="tab" data-tab="settings">Settings</button>
-                  <button class="tab" data-tab="reports">Reports</button>
-                </div>
-
-                <div class="content-wrapper">
-                  <!-- Users Table -->
-                  <div class="table-content active" id="users">
-                    <div class="table-header">
-                      <h1>User Management</h1>
-                      <p>Manage team members and their account permissions</p>
-                    </div>
-
-                    <div class="table-wrapper">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>NAME</th>
-                            <th>EMAIL</th>
-                            <th>ROLE</th>
-                            <th>STATUS</th>
-                            <th>JOINED</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td data-label="Name">Alex Johnson</td>
-                            <td data-label="Email">alex.johnson@example.com</td>
-                            <td data-label="Role">Admin</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Joined">Jan 15, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Name">Maria Garcia</td>
-                            <td data-label="Email">maria.garcia@example.com</td>
-                            <td data-label="Role">Editor</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Joined">Feb 22, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Name">James Smith</td>
-                            <td data-label="Email">james.smith@example.com</td>
-                            <td data-label="Role">Viewer</td>
-                            <td data-label="Status">
-                              <span class="status pending">Pending</span>
-                            </td>
-                            <td data-label="Joined">Mar 10, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Name">Emma Wilson</td>
-                            <td data-label="Email">emma.wilson@example.com</td>
-                            <td data-label="Role">Editor</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Joined">Mar 18, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Name">David Lee</td>
-                            <td data-label="Email">david.lee@example.com</td>
-                            <td data-label="Role">Viewer</td>
-                            <td data-label="Status">
-                              <span class="status inactive">Inactive</span>
-                            </td>
-                            <td data-label="Joined">Apr 5, 2024</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <!-- Team Members Table -->
-                  <div class="table-content" id="team">
-                    <div class="table-header">
-                      <h1>Team Overview</h1>
-                      <p>View all team members and their departments</p>
-                    </div>
-
-                    <div class="table-wrapper">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>NAME</th>
-                            <th>DEPARTMENT</th>
-                            <th>POSITION</th>
-                            <th>STATUS</th>
-                            <th>JOINED</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td data-label="Name">Sarah Connor</td>
-                            <td data-label="Department">Engineering</td>
-                            <td data-label="Position">Senior Developer</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Joined">Jan 5, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Name">Michael Scott</td>
-                            <td data-label="Department">Management</td>
-                            <td data-label="Position">Regional Manager</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Joined">Dec 20, 2023</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Name">Pam Beesly</td>
-                            <td data-label="Department">Sales</td>
-                            <td data-label="Position">Sales Rep</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Joined">Feb 14, 2024</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <!-- Settings Table -->
-                  <div class="table-content" id="settings">
-                    <div class="table-header">
-                      <h1>System Settings</h1>
-                      <p>Configure system preferences and permissions</p>
-                    </div>
-
-                    <div class="table-wrapper">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>SETTING</th>
-                            <th>VALUE</th>
-                            <th>TYPE</th>
-                            <th>STATUS</th>
-                            <th>UPDATED</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td data-label="Setting">Two-Factor Auth</td>
-                            <td data-label="Value">Enabled</td>
-                            <td data-label="Type">Security</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Updated">Nov 1, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Setting">Email Notifications</td>
-                            <td data-label="Value">Enabled</td>
-                            <td data-label="Type">Communication</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Updated">Oct 28, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Setting">API Rate Limit</td>
-                            <td data-label="Value">1000/hour</td>
-                            <td data-label="Type">Performance</td>
-                            <td data-label="Status">
-                              <span class="status active">Active</span>
-                            </td>
-                            <td data-label="Updated">Nov 10, 2024</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <!-- Reports Table -->
-                  <div class="table-content" id="reports">
-                    <div class="table-header">
-                      <h1>Activity Reports</h1>
-                      <p>View detailed activity and performance reports</p>
-                    </div>
-
-                    <div class="table-wrapper">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>REPORT NAME</th>
-                            <th>CATEGORY</th>
-                            <th>GENERATED BY</th>
-                            <th>STATUS</th>
-                            <th>DATE</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td data-label="Report">Monthly Analytics</td>
-                            <td data-label="Category">Analytics</td>
-                            <td data-label="Generated By">System</td>
-                            <td data-label="Status">
-                              <span class="status active">Complete</span>
-                            </td>
-                            <td data-label="Date">Nov 1, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Report">User Activity Log</td>
-                            <td data-label="Category">Security</td>
-                            <td data-label="Generated By">Admin</td>
-                            <td data-label="Status">
-                              <span class="status active">Complete</span>
-                            </td>
-                            <td data-label="Date">Nov 15, 2024</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Report">Performance Metrics</td>
-                            <td data-label="Category">Performance</td>
-                            <td data-label="Generated By">System</td>
-                            <td data-label="Status">
-                              <span class="status pending">Processing</span>
-                            </td>
-                            <td data-label="Date">Nov 20, 2024</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FILES -->
-          <div id="filesPage" class="contentPage d-none">
-            <h3 class="fw-bold">Files</h3>
-            <p>Your uploaded documents.</p>
-            <div class="card p-3 mt-3">Files dummy data loaded...</div>
-          </div>
-
-          <!-- MESSAGES -->
-          <div id="messagesPage" class="contentPage d-none">
-            <h3 class="fw-bold">Messages</h3>
-            <p>Your message center.</p>
-            <div class="card p-3 mt-3">Messages dummy data loaded...</div>
-          </div>
-
-          <!-- SETTINGS -->
-          <div id="settingsPage" class="contentPage d-none">
-            <h3 class="fw-bold">Settings</h3>
-            <p>Customize your dashboard preferences.</p>
-            <div class="card p-3 mt-3">Settings dummy data loaded...</div>
-          </div>
         </div>
       </main>
     </div>

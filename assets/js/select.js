@@ -147,3 +147,28 @@ document.addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   initCustomDropdowns();
 });
+
+
+
+document.addEventListener("click", function (e) {
+
+  // Close ALL dropdowns first
+  document.querySelectorAll(".dropdown-menu-custom").forEach(menu => {
+    if (!menu.contains(e.target) && !e.target.closest(".dropdown-toggle-btn")) {
+      menu.style.display = "none";
+    }
+  });
+
+  // Toggle only the clicked dropdown
+  const toggleBtn = e.target.closest(".dropdown-toggle-btn");
+  if (toggleBtn) {
+    const parent = toggleBtn.closest(".action-dropdown");
+    const menu = parent.querySelector(".dropdown-menu-custom");
+
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+});

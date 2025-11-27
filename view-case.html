@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Analytics Dashboard — Mock</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- MOBILE OVERLAY -->
+    <div id="mobileOverlay"></div>
+
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="nav">
+          <a id="btnHome" href="index.html" class="nav-item">
+            <i class="fa fa-home"></i>
+          </a>
+
+          <div class="menu-with-sub">
+            <a id="btnAnalytics" class="has-sub nav-item">
+              <i class="fa fa-chart-line"></i>
+            </a>
+
+            <div class="submenu">
+              <a class="sub-item" href="new-case.html" data-page="New Case"
+                >New Case</a
+              >
+              <a class="sub-item" href="view-case.html" data-page="sales"
+                >Allocation</a
+              >
+              <a class="sub-item" href="#" data-page="reports">Report</a>
+            </div>
+          </div>
+
+          <a id="btnFiles" class="nav-item">
+            <i class="fa fa-folder"></i>
+          </a>
+
+          <a id="btnMessages" class="nav-item">
+            <i class="fa fa-envelope"></i>
+          </a>
+
+          <a id="btnSettings" class="nav-item">
+            <i class="fa fa-cog"></i>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main container-fluid overflow-hidden px-2">
+        <div class="card border-0 p-3 overflow-hidden">
+          <h4 class="form-title mb-3">View Case</h4>
+
+          <div class="table-wrapper">
+            <div class="table-container">
+              <table class="table_inner">
+                <thead class="t_head">
+                  <tr>
+                    <th>Insurer Name</th>
+                    <th>Insured Br</th>
+                    <th>Insured Name</th>
+                    <th>Intimation Date</th>
+                    <th>Survey Location</th>
+                    <th>Next Follow Up</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+                    <th>Claim Ageing</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>M/s HDFC ERGO General Insurance Company Limited</td>
+                    <td>Mumbai - HDFC</td>
+                    <td>M/s GoEx Freight Solution Pvt Ltd</td>
+                    <td>23/06/2025</td>
+                    <td>Gujarat - Anand</td>
+                    <td>23/06/2025</td>
+
+                    <td class="status-highlight">
+                      <span class="status">New Case</span>
+                    </td>
+
+                    <td>
+                      Policy No. 2412205585269101000<br />
+                      DOL: 21.06.25<br />
+                      Claim Amt: TBA<br />
+                      LR No. 100523624
+                    </td>
+
+                    <td>9</td>
+
+                    <td>
+                      <div class="d-flex gap-2">
+                        <div class="action-dropdown">
+                          <button class="dropdown-toggle-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <div class="dropdown-menu-custom">
+                            <a href="#"><i class="fas fa-eye"></i> View</a>
+                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#"
+                              ><i class="fas fa-clipboard-list"></i> Log</a
+                            >
+                            <a href="#"
+                              ><i class="fas fa-sync-alt"></i> Update</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>M/s Tata AIG General Insurance Company Limited</td>
+                    <td>Noida - Tata</td>
+                    <td>M/s Jindal Steel & Power Limited</td>
+                    <td>23/06/2025</td>
+                    <td>Jharkhand - Jamshedpur</td>
+                    <td>23/06/2025</td>
+
+                    <td class="status-highlight">
+                      <span class="status new">New Case</span>
+                    </td>
+
+                    <td>
+                      The consignment is on process of unloading & segregation
+                      currently it is in USA
+                    </td>
+
+                    <td>9</td>
+
+                    <td>
+                      <div class="d-flex gap-2">
+                        <div class="action-dropdown">
+                          <button class="dropdown-toggle-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <div class="dropdown-menu-custom">
+                            <a href="#"><i class="fas fa-eye"></i> View</a>
+                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#"
+                              ><i class="fas fa-clipboard-list"></i> Log</a
+                            >
+                            <a href="#"
+                              ><i class="fas fa-sync-alt"></i> Update</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="./assets/js/select.js"></script>
+    <script>
+      // Tab switching functionality with smooth animation
+      const tabs = document.querySelectorAll(".tab");
+      const tableContents = document.querySelectorAll(".table-content");
+      let isAnimating = false;
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Prevent multiple clicks during animation
+          if (isAnimating) return;
+
+          const tabName = tab.getAttribute("data-tab");
+          const currentActive = document.querySelector(".table-content.active");
+          const targetContent = document.getElementById(tabName);
+
+          // If clicking the same tab, do nothing
+          if (currentActive === targetContent) return;
+
+          isAnimating = true;
+
+          // Remove active class from all tabs
+          tabs.forEach((t) => t.classList.remove("active"));
+
+          // Add active class to clicked tab
+          tab.classList.add("active");
+
+          // Add fade-out class to current content
+          currentActive.classList.add("fade-out");
+
+          // After fade out animation completes
+          setTimeout(() => {
+            // Remove active and fade-out from current
+            currentActive.classList.remove("active", "fade-out");
+
+            // Add active to new content (will fade in from right)
+            targetContent.classList.add("active");
+
+            // Reset animation lock after animation completes
+            setTimeout(() => {
+              isAnimating = false;
+            }, 500);
+          }, 500);
+        });
+      });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
