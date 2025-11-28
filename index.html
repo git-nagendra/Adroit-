@@ -40,14 +40,20 @@
           </a>
 
           <div class="menu-with-sub">
-            <a id="btnAnalytics" class="has-sub nav-item ">
+            <a id="btnAnalytics" class="has-sub nav-item">
               <i class="fa fa-chart-line"></i>
             </a>
 
             <div class="submenu">
-              <a class="sub-item" href="new-case.html" data-page="New Case">New Case</a>
-              <a class="sub-item" href="view-case.html" data-page="sales">View Case</a>
-              <a class="sub-item" href="detail.html" data-page="reports">Report</a>
+              <a class="sub-item" href="new-case.html" data-page="New Case"
+                >New Case</a
+              >
+              <a class="sub-item" href="view-case.html" data-page="sales"
+                >View Case</a
+              >
+              <a class="sub-item" href="detail.html" data-page="reports"
+                >Report</a
+              >
             </div>
           </div>
 
@@ -177,312 +183,311 @@
                   <span>Help & Support</span>
                 </div>
 
-                <div class="profile-dropdown-item sign-out">
+                <a
+                  href="login.html"
+                  class="profile-dropdown-item sign-out"
+                  style="text-decoration: none"
+                >
                   <i class="fas fa-sign-out-alt"></i>
                   <span>Sign Out</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         <!-- MAIN PAGE CONTENT -->
-        <div id="pageContent" class="mt-3 ">
-         <h3 class="fw-bold mb-3">Dashboard</h3>
-            <div class="row g-4 overflow-hidden">
-              <div class="col-lg-4 overflow-hidden">
-                <div class="card p-4 h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
+        <div id="pageContent" class="mt-3">
+          <h3 class="fw-bold mb-3">Dashboard</h3>
+          <div class="row g-4 overflow-hidden">
+            <div class="col-lg-4 overflow-hidden">
+              <div class="card p-4 h-100">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <h5 class="card-title mb-0">Analytics & Insights</h5>
+                  <select
+                    class="form-select form-select-sm"
+                    style="width: auto"
                   >
-                    <h5 class="card-title mb-0">Analytics & Insights</h5>
-                    <select
-                      class="form-select form-select-sm"
-                      style="width: auto"
-                    >
-                      <option>Monthly</option>
-                      <option>Weekly</option>
-                      <option>Yearly</option>
-                    </select>
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Yearly</option>
+                  </select>
+                </div>
+                <p class="card-subtitle mb-4">
+                  Gain insights into your social media.
+                </p>
+
+                <div class="mb-3">
+                  <div class="d-flex align-items-baseline gap-2 mb-1">
+                    <span class="total-reached">215.6k</span>
+                    <span class="percentage-badge">84.2%</span>
                   </div>
-                  <p class="card-subtitle mb-4">
-                    Gain insights into your social media.
+                  <p class="text-muted mb-0" style="font-size: 0.875rem">
+                    Total Reached
                   </p>
+                </div>
 
-                  <div class="mb-3">
-                    <div class="d-flex align-items-baseline gap-2 mb-1">
-                      <span class="total-reached">215.6k</span>
-                      <span class="percentage-badge">84.2%</span>
-                    </div>
-                    <p class="text-muted mb-0" style="font-size: 0.875rem">
-                      Total Reached
-                    </p>
-                  </div>
-
-                  <div class="chart-container">
-                    <canvas id="barChart"></canvas>
-                  </div>
+                <div class="chart-container">
+                  <canvas id="barChart"></canvas>
                 </div>
               </div>
+            </div>
 
-              <div class="col-lg-4">
-                <div class="card p-4 h-100">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
+            <div class="col-lg-4">
+              <div class="card p-4 h-100">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-2"
+                >
+                  <h5 class="card-title mb-0">Audience Insights</h5>
+                  <select
+                    class="form-select form-select-sm"
+                    style="width: auto"
                   >
-                    <h5 class="card-title mb-0">Audience Insights</h5>
-                    <select
-                      class="form-select form-select-sm"
-                      style="width: auto"
-                    >
-                      <option>All</option>
-                      <option>Instagram</option>
-                      <option>Facebook</option>
-                    </select>
-                  </div>
-                  <p class="card-subtitle mb-4">
-                    Understand your audience effectively.
-                  </p>
+                    <option>All</option>
+                    <option>Instagram</option>
+                    <option>Facebook</option>
+                  </select>
+                </div>
+                <p class="card-subtitle mb-4">
+                  Understand your audience effectively.
+                </p>
 
-                  <div class="doughnut-container mb-3">
-                    <canvas id="doughnutChart"></canvas>
-                    <div class="doughnut-center">
-                      <div class="audience-number">256.k</div>
-                      <div class="text-muted" style="font-size: 0.875rem">
-                        Audience
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt-4 text-center">
-                    <div class="col-4">
-                      <div class="legend-item">
-                        <span
-                          class="legend-dot"
-                          style="background-color: #c4b5fd"
-                        ></span>
-                        <span class="fw-semibold">45%</span>
-                      </div>
-                    </div>
-                    <div class="col-4">
-                      <div class="legend-item">
-                        <span
-                          class="legend-dot"
-                          style="background-color: #fcd34d"
-                        ></span>
-                        <span class="fw-semibold">38%</span>
-                      </div>
-                    </div>
-                    <div class="col-4">
-                      <div class="legend-item">
-                        <span
-                          class="legend-dot"
-                          style="background-color: #1e1e1e"
-                        ></span>
-                        <span class="fw-semibold">17%</span>
-                      </div>
+                <div class="doughnut-container mb-3">
+                  <canvas id="doughnutChart"></canvas>
+                  <div class="doughnut-center">
+                    <div class="audience-number">256.k</div>
+                    <div class="text-muted" style="font-size: 0.875rem">
+                      Audience
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-lg-4">
-                <div class="card p-4 h-100">
-                  <h5 class="card-title mb-2">Content Timeline & Dead</h5>
-                  <p class="card-subtitle mb-4">
-                    Draft, preview, and schedule posts
-                  </p>
-
-                  <div class="timeline">
-                    <div class="timeline-item d-flex align-items-center">
-                      <span class="timeline-day">Mon</span>
-                      <div class="timeline-content">
-                        <span class="text-muted" style="font-size: 0.75rem"
-                          >07:30</span
-                        >
-                        <span class="text-muted ms-3" style="font-size: 0.75rem"
-                          >08:05</span
-                        >
-                      </div>
+                <div class="row mt-4 text-center">
+                  <div class="col-4">
+                    <div class="legend-item">
+                      <span
+                        class="legend-dot"
+                        style="background-color: #c4b5fd"
+                      ></span>
+                      <span class="fw-semibold">45%</span>
                     </div>
-
-                    <div class="timeline-item d-flex align-items-center">
-                      <span class="timeline-day">Tue</span>
-                      <div class="timeline-content">
-                        <span class="behance-badge">Behance</span>
-                      </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="legend-item">
+                      <span
+                        class="legend-dot"
+                        style="background-color: #fcd34d"
+                      ></span>
+                      <span class="fw-semibold">38%</span>
                     </div>
-
-                    <div class="timeline-item d-flex align-items-center">
-                      <span class="timeline-day">Wed</span>
-                      <div class="timeline-content">
-                        <span class="post-badge instagram-badge"
-                          >Instagram Reel</span
-                        >
-                        <span class="text-muted ms-2" style="font-size: 0.75rem"
-                          >Instagram Commun...</span
-                        >
-                      </div>
-                    </div>
-
-                    <div class="timeline-item d-flex align-items-center">
-                      <span class="timeline-day">Thu</span>
-                      <div class="timeline-content"></div>
-                    </div>
-
-                    <div class="timeline-item d-flex align-items-center">
-                      <span class="timeline-day">Fri</span>
-                      <div class="timeline-content text-end">
-                        <span class="post-badge tiktok-badge">TikTok</span>
-                      </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="legend-item">
+                      <span
+                        class="legend-dot"
+                        style="background-color: #1e1e1e"
+                      ></span>
+                      <span class="fw-semibold">17%</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- DEMO INPUT CARD HERE -->
-            <div class="card shadow-sm p-4 mt-3">
-              <h5 class="mb-3 fw-bold">Input Fields Demo</h5>
 
-              <form class="row g-3 custom-form-yellow">
-                <div class="col-md-6">
-                  <label class="form-label">Text Input</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter text"
-                  />
-                </div>
+            <div class="col-lg-4">
+              <div class="card p-4 h-100">
+                <h5 class="card-title mb-2">Content Timeline & Dead</h5>
+                <p class="card-subtitle mb-4">
+                  Draft, preview, and schedule posts
+                </p>
 
-                <div class="col-md-6">
-                  <label class="form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="example@mail.com"
-                  />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Password</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Password"
-                  />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Number</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="12345"
-                  />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Date</label>
-                  <input type="date" class="form-control" />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Time</label>
-                  <input type="time" class="form-control" />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Color Picker</label>
-                  <input type="color" class="form-control form-control-color" />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Range</label>
-                  <input type="range" class="form-range" />
-                </div>
-
-                <div class="col-md-12">
-                  <label class="form-label">File Upload</label>
-                  <input type="file" class="form-control" />
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Dropdown</label>
-                  <select class="form-select">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                  </select>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Multi Select</label>
-                  <select class="form-select" multiple>
-                    <option>A</option>
-                    <option>B</option>
-                  </select>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label d-block">Radio</label>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="radio"
-                      checked
-                    />
-                    <label class="form-check-label">Option A</label>
+                <div class="timeline">
+                  <div class="timeline-item d-flex align-items-center">
+                    <span class="timeline-day">Mon</span>
+                    <div class="timeline-content">
+                      <span class="text-muted" style="font-size: 0.75rem"
+                        >07:30</span
+                      >
+                      <span class="text-muted ms-3" style="font-size: 0.75rem"
+                        >08:05</span
+                      >
+                    </div>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio" />
-                    <label class="form-check-label">Option B</label>
+
+                  <div class="timeline-item d-flex align-items-center">
+                    <span class="timeline-day">Tue</span>
+                    <div class="timeline-content">
+                      <span class="behance-badge">Behance</span>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item d-flex align-items-center">
+                    <span class="timeline-day">Wed</span>
+                    <div class="timeline-content">
+                      <span class="post-badge instagram-badge"
+                        >Instagram Reel</span
+                      >
+                      <span class="text-muted ms-2" style="font-size: 0.75rem"
+                        >Instagram Commun...</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="timeline-item d-flex align-items-center">
+                    <span class="timeline-day">Thu</span>
+                    <div class="timeline-content"></div>
+                  </div>
+
+                  <div class="timeline-item d-flex align-items-center">
+                    <span class="timeline-day">Fri</span>
+                    <div class="timeline-content text-end">
+                      <span class="post-badge tiktok-badge">TikTok</span>
+                    </div>
                   </div>
                 </div>
-
-                <div class="col-md-6">
-                  <label class="form-label d-block">Checkbox</label>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked />
-                    <label class="form-check-label">Check 1</label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Switch</label>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" checked />
-                    <label class="form-check-label">Enabled</label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Input Group</label>
-                  <div class="input-group">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" />
-                  </div>
-                </div>
-
-                <div class="col-md-12">
-                  <label class="form-label">Textarea</label>
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-
-                <div class="col-md-12">
-                  <button type="button" class="btn btn-primary w-100">
-                    Submit
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
+          </div>
+          <!-- DEMO INPUT CARD HERE -->
+          <div class="card shadow-sm p-4 mt-3">
+            <h5 class="mb-3 fw-bold">Input Fields Demo</h5>
 
+            <form class="row g-3 custom-form-yellow">
+              <div class="col-md-6">
+                <label class="form-label">Text Input</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter text"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="example@mail.com"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Number</label>
+                <input type="number" class="form-control" placeholder="12345" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Date</label>
+                <input type="date" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Time</label>
+                <input type="time" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Color Picker</label>
+                <input type="color" class="form-control form-control-color" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Range</label>
+                <input type="range" class="form-range" />
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label">File Upload</label>
+                <input type="file" class="form-control" />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Dropdown</label>
+                <select class="form-select">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Multi Select</label>
+                <select class="form-select" multiple>
+                  <option>A</option>
+                  <option>B</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label d-block">Radio</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="radio"
+                    checked
+                  />
+                  <label class="form-check-label">Option A</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio" />
+                  <label class="form-check-label">Option B</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label d-block">Checkbox</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" checked />
+                  <label class="form-check-label">Check 1</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Switch</label>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" checked />
+                  <label class="form-check-label">Enabled</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Input Group</label>
+                <div class="input-group">
+                  <span class="input-group-text">@</span>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label">Textarea</label>
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+
+              <div class="col-md-12">
+                <button type="button" class="btn btn-primary w-100">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </main>
     </div>
 
     <!-- SCRIPT -->
     <script src="./assets/js/app.js"></script>
-    
+
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -152,14 +152,14 @@ document.querySelectorAll(".notification-item").forEach((item) => {
 // Handle profile dropdown item clicks
 document.querySelectorAll(".profile-dropdown-item").forEach((item) => {
   item.addEventListener("click", () => {
-    const text = item.textContent.trim();
-    if (text === "Sign Out") {
-      alert("Signing out...");
-      // Add your sign out logic here
-    } else {
-      alert(`Navigating to: ${text}`);
-      // Add your navigation logic here
-    }
+    // const text = item.textContent.trim();
+    // if (text === "Sign Out") {
+    //   alert("Signing out...");
+    //   // Add your sign out logic here
+    // } else {
+    //   alert(`Navigating to: ${text}`);
+    //   // Add your navigation logic here
+    // }
   });
 });
 
