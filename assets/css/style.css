@@ -1135,7 +1135,7 @@ tbody tr {
     }
 
    .icon_width{
-    font-size: 56px;
+    font-size: 56px !important;
     color: #f0c946;
    }
         .case-id {
