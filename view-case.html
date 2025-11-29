@@ -72,200 +72,222 @@
       <!-- MAIN CONTENT -->
       <main class="main container-fluid overflow-hidden px-2">
         <div class="card border-0">
-          <h4 class="form-title mb-3">View Case</h4>
+          <div class="p-2 pb-1 d-flex align-items-center justify-content-between">
+            <h4 class="form-title">View Case</h4>
+            <div class="position-relative">
+              <input
+                type="text"
+                id="tableSearch"
+                class=" dropdown-search ps-5"
+                placeholder="Search..."
+              />
+              <i
+                class="fas fa-search position-absolute"
+                style="
+                  top: 50%;
+                  left: 15px;
+                  transform: translateY(-50%);
+                  color: #999;
+                "
+              ></i>
+            </div>
+          </div>
 
           <div class="table-wrapper">
             <div class="table-wrapper">
-                <table class="table_inner" id="dataTable">
-                  <thead class="t_head">
-                    <tr>
-                      <th>Case UID</th>
-                      <th>Name</th>
-                      <th>Mobile</th>
-                      <th>Bank</th>
-                      <th>Location</th>
-                      <th>Case Action</th>
-                      <th>Engineer</th>
-                      <th>Supervisor / Analysis</th>
-                      <th>Status Remark</th>
-                      <th>Eng Status</th>
-                      <th>CR Date</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>NOV/25/43 - 55590663</td>
-                      <td>M/S TOP TECH PRINTERS</td>
-                      <td>******7658</td>
-                      <td>BA TEST - ZN BA1 - MUKESH</td>
-                      <td>GUJARAT - AHMEDABAD - AHMEDABAD</td>
-                      <td>SITE VISIT DONE</td>
-                      <td>KUSHAL KOSHTI</td>
-                      <td>SONAL MAM</td>
-                      <td><span class="status-highlight">Case</span></td>
-                      <td></td>
-                      <td>22-11-2025 11:27AM</td>
-                      <td>
-                        <div class="d-flex gap-2">
-                          <div class="action-dropdown">
-                            <button class="dropdown-toggle-btn">
-                              <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="dropdown-menu-custom">
-                              <a href="#"><i class="fas fa-eye"></i> View</a>
-                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                              <a href="#"
-                                ><i class="fas fa-clipboard-list"></i> Log</a
-                              >
-                              <a href="#"
-                                ><i class="fas fa-sync-alt"></i> Update</a
-                              >
-                            </div>
+              <table class="table_inner" id="dataTable">
+                <thead class="t_head">
+                  <tr>
+                    <th>Case UID</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Bank</th>
+                    <th>Location</th>
+                    <th>Case Action</th>
+                    <th>Engineer</th>
+                    <th>Supervisor / Analysis</th>
+                    <th>Status Remark</th>
+                    <th>Eng Status</th>
+                    <th>CR Date</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>NOV/25/43 - 55590663</td>
+                    <td>M/S TOP TECH PRINTERS</td>
+                    <td>******7658</td>
+                    <td>BA TEST - ZN BA1 - MUKESH</td>
+                    <td>GUJARAT - AHMEDABAD - AHMEDABAD</td>
+                    <td>SITE VISIT DONE</td>
+                    <td>KUSHAL KOSHTI</td>
+                    <td>SONAL MAM</td>
+                    <td><span class="status-highlight">Case</span></td>
+                    <td></td>
+                    <td>22-11-2025 11:27AM</td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <div class="action-dropdown">
+                          <button class="dropdown-toggle-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <div class="dropdown-menu-custom">
+                            <a href="#"><i class="fas fa-eye"></i> View</a>
+                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#"
+                              ><i class="fas fa-clipboard-list"></i> Log</a
+                            >
+                            <a href="#"
+                              ><i class="fas fa-sync-alt"></i> Update</a
+                            >
                           </div>
                         </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>NOV/25/42 - 55590378</td>
-                      <td>MR. YADAV KRUSHNAVIRSINH PULANDERSINH</td>
-                      <td></td>
-                      <td>BA TEST - ZN BA1 - MUKESH</td>
-                      <td>GUJARAT - AHMEDABAD - SAIJPUR BOGHA</td>
-                      <td>SITE VISIT DONE</td>
-                      <td>ABHIJIT CHAUHAN</td>
-                      <td>SONAL MAM</td>
-                      <td></td>
-                      <td></td>
-                      <td>21-11-2025 6:29PM</td>
-                      <td>
-                        <div class="d-flex gap-2">
-                          <div class="action-dropdown">
-                            <button class="dropdown-toggle-btn">
-                              <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="dropdown-menu-custom">
-                              <a href="#"><i class="fas fa-eye"></i> View</a>
-                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                              <a href="#"
-                                ><i class="fas fa-clipboard-list"></i> Log</a
-                              >
-                              <a href="#"
-                                ><i class="fas fa-sync-alt"></i> Update</a
-                              >
-                            </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>NOV/25/42 - 55590378</td>
+                    <td>MR. YADAV KRUSHNAVIRSINH PULANDERSINH</td>
+                    <td></td>
+                    <td>BA TEST - ZN BA1 - MUKESH</td>
+                    <td>GUJARAT - AHMEDABAD - SAIJPUR BOGHA</td>
+                    <td>SITE VISIT DONE</td>
+                    <td>ABHIJIT CHAUHAN</td>
+                    <td>SONAL MAM</td>
+                    <td></td>
+                    <td></td>
+                    <td>21-11-2025 6:29PM</td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <div class="action-dropdown">
+                          <button class="dropdown-toggle-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <div class="dropdown-menu-custom">
+                            <a href="#"><i class="fas fa-eye"></i> View</a>
+                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#"
+                              ><i class="fas fa-clipboard-list"></i> Log</a
+                            >
+                            <a href="#"
+                              ><i class="fas fa-sync-alt"></i> Update</a
+                            >
                           </div>
                         </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>NOV/25/41 - 55590193</td>
-                      <td>M/S VIBRANT COTFAB PRIVATE LIMITED</td>
-                      <td></td>
-                      <td>BA TEST - ZN BA1 - MUKESH</td>
-                      <td>GUJARAT - AHMEDABAD - BOPAL</td>
-                      <td>SITE VISIT DONE</td>
-                      <td>KUSHAL KOSHTI</td>
-                      <td>SONAL MAM</td>
-                      <td></td>
-                      <td></td>
-                      <td style="white-space: nowrap;">21-11-2025<br> 4:12PM</td>
-                      <td>
-                        <div class="d-flex gap-2">
-                          <div class="action-dropdown">
-                            <button class="dropdown-toggle-btn">
-                              <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="dropdown-menu-custom">
-                              <a href="#"><i class="fas fa-eye"></i> View</a>
-                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                              <a href="#"
-                                ><i class="fas fa-clipboard-list"></i> Log</a
-                              >
-                              <a href="#"
-                                ><i class="fas fa-sync-alt"></i> Update</a
-                              >
-                            </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>NOV/25/41 - 55590193</td>
+                    <td>M/S VIBRANT COTFAB PRIVATE LIMITED</td>
+                    <td></td>
+                    <td>BA TEST - ZN BA1 - MUKESH</td>
+                    <td>GUJARAT - AHMEDABAD - BOPAL</td>
+                    <td>SITE VISIT DONE</td>
+                    <td>KUSHAL KOSHTI</td>
+                    <td>SONAL MAM</td>
+                    <td></td>
+                    <td></td>
+                    <td style="white-space: nowrap">
+                      21-11-2025<br />
+                      4:12PM
+                    </td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <div class="action-dropdown">
+                          <button class="dropdown-toggle-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <div class="dropdown-menu-custom">
+                            <a href="#"><i class="fas fa-eye"></i> View</a>
+                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#"
+                              ><i class="fas fa-clipboard-list"></i> Log</a
+                            >
+                            <a href="#"
+                              ><i class="fas fa-sync-alt"></i> Update</a
+                            >
                           </div>
                         </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>NOV/25/40 - 55585085</td>
-                      <td>MR. ARVINDSINH RATHOD</td>
-                      <td>******9486</td>
-                      <td>BA TEST - ZN BA1 - MUKESH</td>
-                      <td>GUJARAT - GANDHINAGAR - GANDHINAGAR</td>
-                      <td>SITE VISIT DONE</td>
-                      <td>Janak</td>
-                      <td>SONAL MAM</td>
-                      <td></td>
-                      <td></td>
-                      <td>15-11-2025 4:41PM</td>
-                      <td>
-                        <div class="d-flex gap-2">
-                          <div class="action-dropdown">
-                            <button class="dropdown-toggle-btn">
-                              <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="dropdown-menu-custom">
-                              <a href="#"><i class="fas fa-eye"></i> View</a>
-                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                              <a href="#"
-                                ><i class="fas fa-clipboard-list"></i> Log</a
-                              >
-                              <a href="#"
-                                ><i class="fas fa-sync-alt"></i> Update</a
-                              >
-                            </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>NOV/25/40 - 55585085</td>
+                    <td>MR. ARVINDSINH RATHOD</td>
+                    <td>******9486</td>
+                    <td>BA TEST - ZN BA1 - MUKESH</td>
+                    <td>GUJARAT - GANDHINAGAR - GANDHINAGAR</td>
+                    <td>SITE VISIT DONE</td>
+                    <td>Janak</td>
+                    <td>SONAL MAM</td>
+                    <td></td>
+                    <td></td>
+                    <td>15-11-2025 4:41PM</td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <div class="action-dropdown">
+                          <button class="dropdown-toggle-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <div class="dropdown-menu-custom">
+                            <a href="#"><i class="fas fa-eye"></i> View</a>
+                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#"
+                              ><i class="fas fa-clipboard-list"></i> Log</a
+                            >
+                            <a href="#"
+                              ><i class="fas fa-sync-alt"></i> Update</a
+                            >
                           </div>
                         </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>NOV/25/39 - 55585006</td>
-                      <td>MR. HARESHKUMAR BABULAL PATEL</td>
-                      <td>******9888</td>
-                      <td>BA TEST - ZN BA1 - MUKESH</td>
-                      <td>GUJARAT - MAHESANA - MEHSANA</td>
-                      <td>SITE VISIT DONE</td>
-                      <td>NIRAL SOLNAKI</td>
-                      <td>SONAL MAM</td>
-                      <td></td>
-                      <td></td>
-                      <td>15-11-2025 3:53PM</td>
-                      <td>
-                        <div class="d-flex gap-2">
-                          <div class="action-dropdown">
-                            <button class="dropdown-toggle-btn">
-                              <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="dropdown-menu-custom">
-                              <a href="#"><i class="fas fa-eye"></i> View</a>
-                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                              <a href="#"
-                                ><i class="fas fa-clipboard-list"></i> Log</a
-                              >
-                              <a href="#"
-                                ><i class="fas fa-sync-alt"></i> Update</a
-                              >
-                            </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>NOV/25/39 - 55585006</td>
+                    <td>MR. HARESHKUMAR BABULAL PATEL</td>
+                    <td>******9888</td>
+                    <td>BA TEST - ZN BA1 - MUKESH</td>
+                    <td>GUJARAT - MAHESANA - MEHSANA</td>
+                    <td>SITE VISIT DONE</td>
+                    <td>NIRAL SOLNAKI</td>
+                    <td>SONAL MAM</td>
+                    <td></td>
+                    <td></td>
+                    <td>15-11-2025 3:53PM</td>
+                    <td>
+                      <div class="d-flex gap-2">
+                        <div class="action-dropdown">
+                          <button class="dropdown-toggle-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                          </button>
+                          <div class="dropdown-menu-custom">
+                            <a href="#"><i class="fas fa-eye"></i> View</a>
+                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="#"
+                              ><i class="fas fa-clipboard-list"></i> Log</a
+                            >
+                            <a href="#"
+                              ><i class="fas fa-sync-alt"></i> Update</a
+                            >
                           </div>
                         </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <!-- PAGINATION -->
-              <div class="pagination-container">
-                <div id="paginationControls" class="pagination-controls">
-                  <button id="prevBtn">Prev</button>
-                  <div id="pageNumbers"></div>
-                  <button id="nextBtn">Next</button>
-                </div>
+            <!-- PAGINATION -->
+            <div class="pagination-container">
+              <div id="paginationControls" class="pagination-controls">
+                <button id="prevBtn">Prev</button>
+                <div id="pageNumbers"></div>
+                <button id="nextBtn">Next</button>
               </div>
+            </div>
           </div>
         </div>
       </main>
