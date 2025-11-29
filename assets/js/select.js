@@ -79,13 +79,11 @@ document.addEventListener("click", e => {
 
 
 
-
 // Function to initialize all custom dropdowns
 function initCustomDropdowns(container = document) {
   const dropdowns = container.querySelectorAll(".custom-dropdown");
 
   dropdowns.forEach(dropdown => {
-    // Skip if already initialized
     if (dropdown.dataset.initialized) return;
     dropdown.dataset.initialized = true;
 
@@ -93,11 +91,10 @@ function initCustomDropdowns(container = document) {
     const optionsContainer = dropdown.querySelector(".dropdown-options");
     const options = dropdown.querySelectorAll(".dropdown-option");
     const hiddenInput = dropdown.querySelector("input[type='hidden']");
-    const arrow = selected.querySelector(".dropdown-arrow svg");
+    const searchInput = dropdown.querySelector(".dropdown-search");
 
     // Toggle dropdown open/close
     selected.addEventListener("click", () => {
-      // Close all other dropdowns
       document.querySelectorAll(".custom-dropdown.open").forEach(dd => {
         if (dd !== dropdown) {
           dd.classList.remove("open");
@@ -105,35 +102,47 @@ function initCustomDropdowns(container = document) {
         }
       });
 
-      // Toggle this dropdown
       dropdown.classList.toggle("open");
       optionsContainer.style.display = dropdown.classList.contains("open") ? "block" : "none";
+
+      // Focus search when dropdown opens
+      if (dropdown.classList.contains("open") && searchInput) {
+        searchInput.value = "";
+        searchInput.focus();
+
+        // Reset all options
+        options.forEach(opt => opt.style.display = "block");
+      }
     });
 
-    // Select an option
+    // Select option
     options.forEach(option => {
       option.addEventListener("click", () => {
-        // Remove active from all options in this dropdown
         options.forEach(opt => opt.classList.remove("active"));
-
-        // Set clicked option as active
         option.classList.add("active");
-
-        // Update selected text
         selected.childNodes[0].nodeValue = option.textContent;
-
-        // Update hidden input for form submission
         hiddenInput.value = option.dataset.value;
 
-        // Close dropdown
         dropdown.classList.remove("open");
         optionsContainer.style.display = "none";
       });
     });
+
+    // 🔍 Search filter
+    if (searchInput) {
+      searchInput.addEventListener("keyup", () => {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        options.forEach(option => {
+          const text = option.textContent.toLowerCase();
+          option.style.display = text.includes(searchTerm) ? "block" : "none";
+        });
+      });
+    }
   });
 }
 
-// Close dropdowns when clicking outside
+// Close dropdown when clicking outside
 document.addEventListener("click", (e) => {
   document.querySelectorAll(".custom-dropdown.open").forEach(dropdown => {
     if (!dropdown.contains(e.target)) {
@@ -143,10 +152,11 @@ document.addEventListener("click", (e) => {
   });
 });
 
-// Initialize dropdowns on page load
+// Initialize dropdown
 document.addEventListener("DOMContentLoaded", () => {
   initCustomDropdowns();
 });
+
 
 
 

@@ -71,112 +71,201 @@
 
       <!-- MAIN CONTENT -->
       <main class="main container-fluid overflow-hidden px-2">
-        <div class="card border-0 p-3 overflow-hidden">
+        <div class="card border-0">
           <h4 class="form-title mb-3">View Case</h4>
 
           <div class="table-wrapper">
-            <div class="table-container">
-              <table class="table_inner">
-                <thead class="t_head">
-                  <tr>
-                    <th>Insurer Name</th>
-                    <th>Insured Br</th>
-                    <th>Insured Name</th>
-                    <th>Intimation Date</th>
-                    <th>Survey Location</th>
-                    <th>Next Follow Up</th>
-                    <th>Status</th>
-                    <th>Remarks</th>
-                    <th>Claim Ageing</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>M/s HDFC ERGO General Insurance Company Limited</td>
-                    <td>Mumbai - HDFC</td>
-                    <td>M/s GoEx Freight Solution Pvt Ltd</td>
-                    <td>23/06/2025</td>
-                    <td>Gujarat - Anand</td>
-                    <td>23/06/2025</td>
-
-                    <td class="status-highlight">
-                      <span class="status">New Case</span>
-                    </td>
-
-                    <td>
-                      Policy No. 2412205585269101000<br />
-                      DOL: 21.06.25<br />
-                      Claim Amt: TBA<br />
-                      LR No. 100523624
-                    </td>
-
-                    <td>9</td>
-
-                    <td>
-                      <div class="d-flex gap-2">
-                        <div class="action-dropdown">
-                          <button class="dropdown-toggle-btn">
-                            <i class="fas fa-ellipsis-v"></i>
-                          </button>
-                          <div class="dropdown-menu-custom">
-                            <a href="#"><i class="fas fa-eye"></i> View</a>
-                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                            <a href="#"
-                              ><i class="fas fa-clipboard-list"></i> Log</a
-                            >
-                            <a href="#"
-                              ><i class="fas fa-sync-alt"></i> Update</a
-                            >
+            <div class="table-wrapper">
+                <table class="table_inner" id="dataTable">
+                  <thead class="t_head">
+                    <tr>
+                      <th>Case UID</th>
+                      <th>Name</th>
+                      <th>Mobile</th>
+                      <th>Bank</th>
+                      <th>Location</th>
+                      <th>Case Action</th>
+                      <th>Engineer</th>
+                      <th>Supervisor / Analysis</th>
+                      <th>Status Remark</th>
+                      <th>Eng Status</th>
+                      <th>CR Date</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>NOV/25/43 - 55590663</td>
+                      <td>M/S TOP TECH PRINTERS</td>
+                      <td>******7658</td>
+                      <td>BA TEST - ZN BA1 - MUKESH</td>
+                      <td>GUJARAT - AHMEDABAD - AHMEDABAD</td>
+                      <td>SITE VISIT DONE</td>
+                      <td>KUSHAL KOSHTI</td>
+                      <td>SONAL MAM</td>
+                      <td><span class="status-highlight">Case</span></td>
+                      <td></td>
+                      <td>22-11-2025 11:27AM</td>
+                      <td>
+                        <div class="d-flex gap-2">
+                          <div class="action-dropdown">
+                            <button class="dropdown-toggle-btn">
+                              <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu-custom">
+                              <a href="#"><i class="fas fa-eye"></i> View</a>
+                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                              <a href="#"
+                                ><i class="fas fa-clipboard-list"></i> Log</a
+                              >
+                              <a href="#"
+                                ><i class="fas fa-sync-alt"></i> Update</a
+                              >
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>M/s Tata AIG General Insurance Company Limited</td>
-                    <td>Noida - Tata</td>
-                    <td>M/s Jindal Steel & Power Limited</td>
-                    <td>23/06/2025</td>
-                    <td>Jharkhand - Jamshedpur</td>
-                    <td>23/06/2025</td>
-
-                    <td class="status-highlight">
-                      <span class="status new">New Case</span>
-                    </td>
-
-                    <td>
-                      The consignment is on process of unloading & segregation
-                      currently it is in USA
-                    </td>
-
-                    <td>9</td>
-
-                    <td>
-                      <div class="d-flex gap-2">
-                        <div class="action-dropdown">
-                          <button class="dropdown-toggle-btn">
-                            <i class="fas fa-ellipsis-v"></i>
-                          </button>
-                          <div class="dropdown-menu-custom">
-                            <a href="#"><i class="fas fa-eye"></i> View</a>
-                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                            <a href="#"
-                              ><i class="fas fa-clipboard-list"></i> Log</a
-                            >
-                            <a href="#"
-                              ><i class="fas fa-sync-alt"></i> Update</a
-                            >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NOV/25/42 - 55590378</td>
+                      <td>MR. YADAV KRUSHNAVIRSINH PULANDERSINH</td>
+                      <td></td>
+                      <td>BA TEST - ZN BA1 - MUKESH</td>
+                      <td>GUJARAT - AHMEDABAD - SAIJPUR BOGHA</td>
+                      <td>SITE VISIT DONE</td>
+                      <td>ABHIJIT CHAUHAN</td>
+                      <td>SONAL MAM</td>
+                      <td></td>
+                      <td></td>
+                      <td>21-11-2025 6:29PM</td>
+                      <td>
+                        <div class="d-flex gap-2">
+                          <div class="action-dropdown">
+                            <button class="dropdown-toggle-btn">
+                              <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu-custom">
+                              <a href="#"><i class="fas fa-eye"></i> View</a>
+                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                              <a href="#"
+                                ><i class="fas fa-clipboard-list"></i> Log</a
+                              >
+                              <a href="#"
+                                ><i class="fas fa-sync-alt"></i> Update</a
+                              >
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NOV/25/41 - 55590193</td>
+                      <td>M/S VIBRANT COTFAB PRIVATE LIMITED</td>
+                      <td></td>
+                      <td>BA TEST - ZN BA1 - MUKESH</td>
+                      <td>GUJARAT - AHMEDABAD - BOPAL</td>
+                      <td>SITE VISIT DONE</td>
+                      <td>KUSHAL KOSHTI</td>
+                      <td>SONAL MAM</td>
+                      <td></td>
+                      <td></td>
+                      <td style="white-space: nowrap;">21-11-2025<br> 4:12PM</td>
+                      <td>
+                        <div class="d-flex gap-2">
+                          <div class="action-dropdown">
+                            <button class="dropdown-toggle-btn">
+                              <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu-custom">
+                              <a href="#"><i class="fas fa-eye"></i> View</a>
+                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                              <a href="#"
+                                ><i class="fas fa-clipboard-list"></i> Log</a
+                              >
+                              <a href="#"
+                                ><i class="fas fa-sync-alt"></i> Update</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NOV/25/40 - 55585085</td>
+                      <td>MR. ARVINDSINH RATHOD</td>
+                      <td>******9486</td>
+                      <td>BA TEST - ZN BA1 - MUKESH</td>
+                      <td>GUJARAT - GANDHINAGAR - GANDHINAGAR</td>
+                      <td>SITE VISIT DONE</td>
+                      <td>Janak</td>
+                      <td>SONAL MAM</td>
+                      <td></td>
+                      <td></td>
+                      <td>15-11-2025 4:41PM</td>
+                      <td>
+                        <div class="d-flex gap-2">
+                          <div class="action-dropdown">
+                            <button class="dropdown-toggle-btn">
+                              <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu-custom">
+                              <a href="#"><i class="fas fa-eye"></i> View</a>
+                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                              <a href="#"
+                                ><i class="fas fa-clipboard-list"></i> Log</a
+                              >
+                              <a href="#"
+                                ><i class="fas fa-sync-alt"></i> Update</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>NOV/25/39 - 55585006</td>
+                      <td>MR. HARESHKUMAR BABULAL PATEL</td>
+                      <td>******9888</td>
+                      <td>BA TEST - ZN BA1 - MUKESH</td>
+                      <td>GUJARAT - MAHESANA - MEHSANA</td>
+                      <td>SITE VISIT DONE</td>
+                      <td>NIRAL SOLNAKI</td>
+                      <td>SONAL MAM</td>
+                      <td></td>
+                      <td></td>
+                      <td>15-11-2025 3:53PM</td>
+                      <td>
+                        <div class="d-flex gap-2">
+                          <div class="action-dropdown">
+                            <button class="dropdown-toggle-btn">
+                              <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu-custom">
+                              <a href="#"><i class="fas fa-eye"></i> View</a>
+                              <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                              <a href="#"
+                                ><i class="fas fa-clipboard-list"></i> Log</a
+                              >
+                              <a href="#"
+                                ><i class="fas fa-sync-alt"></i> Update</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- PAGINATION -->
+              <div class="pagination-container">
+                <div id="paginationControls" class="pagination-controls">
+                  <button id="prevBtn">Prev</button>
+                  <div id="pageNumbers"></div>
+                  <button id="nextBtn">Next</button>
+                </div>
+              </div>
           </div>
         </div>
       </main>
@@ -229,6 +318,59 @@
         });
       });
     </script>
+    <script>
+      const rowsPerPage = 5;
+      const table = document.getElementById("dataTable");
+      const tbody = table.querySelector("tbody");
+      const rows = tbody.querySelectorAll("tr");
+
+      let currentPage = 1;
+      const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+      function renderTable() {
+        rows.forEach((row, index) => {
+          row.style.display =
+            index >= (currentPage - 1) * rowsPerPage &&
+            index < currentPage * rowsPerPage
+              ? ""
+              : "none";
+        });
+
+        renderPaginationButtons();
+      }
+
+      function renderPaginationButtons() {
+        const pageNumbers = document.getElementById("pageNumbers");
+        pageNumbers.innerHTML = "";
+
+        for (let i = 1; i <= totalPages; i++) {
+          let btn = document.createElement("button");
+          btn.innerText = i;
+
+          if (i === currentPage) btn.classList.add("active");
+
+          btn.addEventListener("click", () => {
+            currentPage = i;
+            renderTable();
+          });
+
+          pageNumbers.appendChild(btn);
+        }
+      }
+
+      document.getElementById("prevBtn").onclick = () => {
+        if (currentPage > 1) currentPage--;
+        renderTable();
+      };
+
+      document.getElementById("nextBtn").onclick = () => {
+        if (currentPage < totalPages) currentPage++;
+        renderTable();
+      };
+
+      renderTable();
+    </script>
+
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
