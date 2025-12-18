@@ -491,7 +491,39 @@
         </div>
       </main>
     </div>
+        <!-- BOT ICON -->
+    <div class="bot-icon" onclick="toggleChat()">
+      <i class="fa-solid fa-robot"></i>
+    </div>
 
+    <!-- CHAT BOX -->
+    <div class="chat-box" id="chatBox">
+      <!-- HEADER -->
+      <div class="chat-header">
+        <div class="header-left">
+          <img src="./assets/image/news_corporate3.jpg" alt="bot" />
+          <div class="header-title">Adroit Technical Services</div>
+        </div>
+        <div class="header-actions">
+          <i class="fa-solid fa-rotate-right" onclick="resetChat()"></i>
+          <i class="fa-solid fa-xmark" onclick="toggleChat()"></i>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div class="chat-body" id="chatBody">
+        <div class="message bot-msg">Hello , i'm here to assist you.</div>
+        <div class="message bot-msg">May I know your name?</div>
+      </div>
+
+      <!-- INPUT -->
+      <div class="chat-footer">
+        <input type="text" placeholder="Type your answer" />
+        <button><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+
+      <div class="chat-powered pb-2">we run on <b>SmatBot</b></div>
+    </div>
     <!-- SCRIPT -->
     <script src="./assets/js/select.js"></script>
     <script>
@@ -540,6 +572,7 @@
       });
     </script>
     <!-- Bootstrap JS -->
+     <script src="./assets/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>

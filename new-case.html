@@ -51,7 +51,9 @@
               <a class="sub-item" href="view-case.html" data-page="sales"
                 >Allocation</a
               >
-              <a class="sub-item" href="#" data-page="reports">Report</a>
+              <a class="sub-item" href="detail.html" data-page="reports"
+                >Report</a
+              >
             </div>
           </div>
 
@@ -72,7 +74,23 @@
       <!-- MAIN CONTENT -->
       <main class="main container-fluid px-2">
         <div class="card border-0 p-3">
-          <h4 class="form-title mb-3">Bank Details</h4>
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="form-title mb-3">Bank Details</h4>
+            <div class="d-flex gap-2 align-items-center">
+              <button class="btn btn-primary mb-2" data-popup="popup1">
+                Open Small Popup
+              </button>
+              <button class="btn btn-success mb-2" data-popup="popup2">
+                Open Medium Popup
+              </button>
+              <button class="btn btn-warning mb-2" data-popup="popup3">
+                Open Large Popup
+              </button>
+              <button class="btn btn-danger mb-2" data-popup="popup4">
+                Open Extra Large Popup
+              </button>
+            </div>
+          </div>
 
           <div class="card p-4">
             <form>
@@ -149,7 +167,6 @@
                       <div class="dropdown-option" data-value="Other">
                         Delhi Zone
                       </div>
-                      
                     </div>
                     <input type="hidden" id="zone" name="zone" />
                   </div>
@@ -1047,9 +1064,99 @@
         </div>
       </main>
     </div>
+    <!-- Popups -->
+    <div class="popup-overlay" id="popup1">
+      <div class="popup-box popup-width-sm">
+        <button class="popup-close">&times;</button>
+        <h4>Small Popup</h4>
+        <p>This is a small width popup.</p>
+      </div>
+    </div>
 
+    <div class="popup-overlay" id="popup2">
+      <div class="popup-box popup-width-md">
+        <button class="popup-close">&times;</button>
+        <h4>Medium Popup</h4>
+        <p>This is a medium width popup.</p>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="popup3">
+      <div class="popup-box popup-width-lg">
+        <button class="popup-close">&times;</button>
+        <div class="d-flex align-items-center justify-content-center">
+           <!-- LEFT : ERROR ICON -->
+    <div class="popup-left">
+      <div class="error-box">
+        <div class="error-icon">!</div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="popup-right">
+      <h2>
+        Get access to this <span>limited<br>time offer</span>
+      </h2>
+
+      <div class="timer">
+        <div class="time-box"><strong>01</strong><span>days</span></div>
+        <div class="time-box"><strong>09</strong><span>hours</span></div>
+        <div class="time-box"><strong>21</strong><span>minutes</span></div>
+        <div class="time-box"><strong>29</strong><span>seconds</span></div>
+      </div>
+
+      <p>
+        You're running out of time, no really! Our offer is super limited,
+        and only available to first time visitors.
+      </p>
+
+      <button class="cta-btn">Call to action</button>
+    </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="popup4">
+      <div class="popup-box popup-width-xl">
+        <button class="popup-close">&times;</button>
+        <h4>Extra Large Popup</h4>
+        <p>This is an extra large width popup.</p>
+      </div>
+    </div>
+    
+   
     <!-- SCRIPT -->
     <script src="./assets/js/select.js"></script>
+    <script>
+      // Open popup
+      document.querySelectorAll("[data-popup]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const popupId = button.getAttribute("data-popup");
+          const popup = document.getElementById(popupId);
+          popup.classList.add("show");
+        });
+      });
+
+      // Close popup
+      document
+        .querySelectorAll(".popup-close, .popup-overlay")
+        .forEach((el) => {
+          el.addEventListener("click", (e) => {
+            if (e.target === el || e.target.classList.contains("popup-close")) {
+              el.closest(".popup-overlay").classList.remove("show");
+            }
+          });
+        });
+
+      // Close popup on ESC key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".popup-overlay.show")
+            .forEach((p) => p.classList.remove("show"));
+        }
+      });
+    </script>
     <script>
       // Tab switching functionality with smooth animation
       const tabs = document.querySelectorAll(".tab");

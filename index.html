@@ -202,15 +202,14 @@
           <div class="row g-4 overflow-hidden">
             <div class="col-lg-4 overflow-hidden">
               <div class="card p-4 h-100">
-                
                 <div
                   class="d-flex justify-content-between align-items-center mb-2"
                 >
                   <h5 class="card-title mb-0">Analytics & Insights</h5>
-                  <div class="custom-dropdown w-25 ">
+                  <div class="custom-dropdown w-25">
                     <div class="dropdown-selected">
                       Monthly
-                      <span class="dropdown-arrow ms-2 ">
+                      <span class="dropdown-arrow ms-2">
                         <svg width="13" height="13" viewBox="0 0 12 12">
                           <path
                             d="M2 4l4 4 4-4"
@@ -229,9 +228,7 @@
                         class="dropdown-search"
                         placeholder="Search..."
                       /> -->
-                      <div class="dropdown-option" data-value="OSV">
-                        Weekly
-                      </div>
+                      <div class="dropdown-option" data-value="OSV">Weekly</div>
                       <div class="dropdown-option" data-value="Other">
                         Yearly
                       </div>
@@ -265,8 +262,8 @@
                   class="d-flex justify-content-between align-items-center mb-2"
                 >
                   <h5 class="card-title mb-0">Audience Insights</h5>
-                  <div class="custom-dropdown " >
-                    <div class="dropdown-selected" >
+                  <div class="custom-dropdown">
+                    <div class="dropdown-selected">
                       All
                       <span class="dropdown-arrow ms-2">
                         <svg width="13" height="13" viewBox="0 0 12 12">
@@ -280,7 +277,7 @@
                         </svg>
                       </span>
                     </div>
-                    <div class="dropdown-options" style="width: 120px;">
+                    <div class="dropdown-options" style="width: 120px">
                       <!-- 🔍 Search Box -->
                       <!-- <input
                         type="text"
@@ -296,7 +293,6 @@
                     </div>
                     <input type="hidden" id="branch" name="branch" />
                   </div>
-                  
                 </div>
                 <p class="card-subtitle mb-4">
                   Understand your audience effectively.
@@ -398,11 +394,42 @@
               </div>
             </div>
           </div>
-          
         </div>
       </main>
     </div>
+    <!-- BOT ICON -->
+    <div class="bot-icon" onclick="toggleChat()">
+      <i class="fa-solid fa-robot"></i>
+    </div>
 
+    <!-- CHAT BOX -->
+    <div class="chat-box" id="chatBox">
+      <!-- HEADER -->
+      <div class="chat-header">
+        <div class="header-left">
+          <img src="./assets/image/news_corporate3.jpg" alt="bot" />
+          <div class="header-title">Adroit Technical Services</div>
+        </div>
+        <div class="header-actions">
+          <i class="fa-solid fa-rotate-right" onclick="resetChat()"></i>
+          <i class="fa-solid fa-xmark" onclick="toggleChat()"></i>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div class="chat-body" id="chatBody">
+        <div class="message bot-msg">Hello , i'm here to assist you.</div>
+        <div class="message bot-msg">May I know your name?</div>
+      </div>
+
+      <!-- INPUT -->
+      <div class="chat-footer">
+        <input type="text" placeholder="Type your answer" />
+        <button><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+
+      <div class="chat-powered pb-2">we run on <b>SmatBot</b></div>
+    </div>
     <!-- SCRIPT -->
     <script src="./assets/js/app.js"></script>
 
@@ -523,6 +550,7 @@
         });
       });
     </script>
+    
     <script src="./assets/js/select.js"></script>
   </body>
 </html>

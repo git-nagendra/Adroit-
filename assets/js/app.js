@@ -166,6 +166,22 @@ document.querySelectorAll(".profile-dropdown-item").forEach((item) => {
 
 
 
+      function toggleChat() {
+        const chat = document.getElementById("chatBox");
+        chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+      }
+
+      function resetChat() {
+        document.getElementById("chatBody").innerHTML = `
+    <div class="message bot-msg">Hello , i'm here to assist you.</div>
+    <div class="message bot-msg">May I know your name?</div>
+  `;
+      }
+
+
+
+
+
 
 
 

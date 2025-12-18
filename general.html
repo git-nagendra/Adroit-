@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Case Details - View</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- MOBILE OVERLAY -->
+    <div id="mobileOverlay"></div>
+    <!-- COLLAPSE BUTTON -->
+    <button class="right-toggle-btn" onclick="toggleRightPanel()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- MOBILE OVERLAY -->
+    <div id="mobileOverlay" onclick="toggleRightPanel()"></div>
+
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="nav">
+          <a id="btnHome" href="index.html" class="nav-item">
+            <i class="fa fa-home"></i>
+          </a>
+
+          <div class="menu-with-sub">
+            <a id="btnAnalytics" class="has-sub nav-item">
+              <i class="fa fa-chart-line"></i>
+            </a>
+
+            <div class="submenu">
+              <a class="sub-item" href="new-case.html" data-page="New Case"
+                >New Case</a
+              >
+              <a class="sub-item" href="view-case.html" data-page="sales"
+                >Allocation</a
+              >
+              <a class="sub-item" href="detail.html" data-page="reports"
+                >Report</a
+              >
+            </div>
+          </div>
+
+          <a id="btnFiles" class="nav-item"><i class="fa fa-folder"></i></a>
+          <a id="btnMessages" class="nav-item"
+            ><i class="fa fa-envelope"></i
+          ></a>
+          <a id="btnSettings" class="nav-item"><i class="fa fa-cog"></i></a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main container-fluid overflow-hidden px-2">
+        <!-- LEFT + RIGHT WRAPPER -->
+        <div class="layout-wrapper">
+          <!-- LEFT CONTENT -->
+          <div id="leftContent">
+            <!-- TOP BAR -->
+            <!-- <div class="topbar">
+              <h2><i class="fa-solid fa-house"></i> Property Details</h2>
+              <div class="actions">
+                <button><i class="fa fa-save"></i> Save Draft</button>
+                <button><i class="fa fa-file-signature"></i> Submit</button>
+              </div>
+            </div> -->
+
+            <!-- TABS -->
+            <div class="tabs">
+              <div class="tab active" data-tab="t1">
+                <i class="fa fa-file"></i> General 1
+              </div>
+              <div class="tab" data-tab="t2">
+                <i class="fa fa-pen"></i> General 2
+              </div>
+              <div class="tab" data-tab="t3">
+                <i class="fa fa-building"></i> Property
+              </div>
+              <div class="tab" data-tab="t4">
+                <i class="fa fa-chart-line"></i> CFM
+              </div>
+              <div class="tab" data-tab="t5">
+                <i class="fa fa-layer-group"></i> Other
+              </div>
+              <div class="tab" data-tab="t6">
+                <i class="fa fa-radar"></i> Radar
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="card border-0 scroll_none">
+              <div class="card-body">
+                <!-- TAB 1 -->
+                <div class="tab-content active" data-content="t1">
+                  <div class="row mb-2">
+                    <label
+                      for="presence"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      In Presence of
+                    </label>
+                    <div class="col-lg-9">
+                      <input
+                        type="text"
+                        placeholder=""
+                        id="presence"
+                        class="form-control custom-input"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="applicantNameTrf"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Name of Applicant As per TRF
+                    </label>
+                    <div class="col-lg-9">
+                      <input
+                        type="text"
+                        id="applicantNameTrf"
+                        class="form-control custom-input"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="ownerNameDoc"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Name of Owner As per Documents
+                    </label>
+                    <div class="col-lg-9">
+                      <input
+                        type="text"
+                        id="ownerNameDoc"
+                        class="form-control custom-input"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="addressTrf"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Address of the property being appraised
+                      <span style="font-size: 12px"> (As per TRF)</span>
+                    </label>
+                    <div class="col-lg-9">
+                      <textarea
+                        id="addressTrf"
+                        rows="2"
+                        class="form-control custom-input"
+                      >
+                      </textarea>
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="addressActual"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Address of the property being appraised
+                      <span style="font-size: 12px"> (As per Actual)</span>
+                    </label>
+                    <div class="col-lg-9">
+                      <textarea
+                        id="addressActual"
+                        rows="2"
+                        class="form-control custom-input"
+                      >
+PROPERTY SITUATED AT FLAT NO. 110, FIRST FLOOR MIDDLE SIDE WITHOUT ROOF RIGHT, HOMETECH HOMES-2, VILLAGE HOSHIYARPUR
+      </textarea
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="addressDocument"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Address of the Property <br />
+                      <span style="font-size: 12px">(As per Document)</span>
+                    </label>
+                    <div class="col-lg-9">
+                      <textarea
+                        id="addressDocument"
+                        rows="2"
+                        class="form-control custom-input"
+                      >
+PLOT NO. 3 & 4, FLAT NO. 110, FIRST FLOOR, HOMETECH HOMES-2, KHASRA NO. 651, 652, 653, 654M/654MI AND 666MI
+      </textarea
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="documentOffice"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Document With Office
+                    </label>
+                    <div class="col-lg-9">
+                      <input
+                        type="text"
+                        id="documentOffice"
+                        class="form-control custom-input"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="pincode"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Pin Code
+                    </label>
+                    <div class="col-lg-9">
+                      <input
+                        type="text"
+                        id="pincode"
+                        class="form-control custom-input"
+                        value="201301"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="landmark"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Landmark
+                    </label>
+                    <div class="col-lg-9">
+                      <input
+                        type="text"
+                        id="landmark"
+                        class="form-control custom-input"
+                        value="NEAR MANAV RACHNA SCHOOL"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <label
+                      for="addressMatching"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Address Matching
+                    </label>
+                    <div class="col-lg-9">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Address Matching
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Matching">
+                            Matching
+                          </div>
+                          <div
+                            class="dropdown-option"
+                            data-value="Not Matching"
+                          >
+                            Not Matching
+                          </div>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          id="addressMatching"
+                          name="addressMatching"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <label
+                      for="localityType"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Type Of Locality
+                    </label>
+                    <div class="col-lg-9">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Locality Type
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Residential">
+                            Residential
+                          </div>
+                          <div class="dropdown-option" data-value="Commercial">
+                            Commercial
+                          </div>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          id="localityType"
+                          name="localityType"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <label
+                      for="neighborhood"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Neighborhood / Class of Locality
+                    </label>
+                    <div class="col-lg-9">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Class
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div
+                            class="dropdown-option"
+                            data-value="Middle Class"
+                          >
+                            Middle Class
+                          </div>
+                          <div
+                            class="dropdown-option"
+                            data-value="Upper Middle"
+                          >
+                            Upper Middle
+                          </div>
+                          <div class="dropdown-option" data-value="Lower">
+                            Lower
+                          </div>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          id="neighborhood"
+                          name="neighborhood"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <label
+                      for="occupancyStatus"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Occupancy Status
+                    </label>
+                    <div class="col-lg-9">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Occupancy Status
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Vacant">
+                            Vacant
+                          </div>
+                          <div class="dropdown-option" data-value="Occupied">
+                            Occupied
+                          </div>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          id="occupancyStatus"
+                          name="occupancyStatus"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <label
+                      for="occupiedBy"
+                      class="col-lg-3 col-form-label form-label"
+                    >
+                      Occupied By
+                    </label>
+                    <div class="col-lg-9">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Occupied By
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Vacant">
+                            Vacant
+                          </div>
+                          <div class="dropdown-option" data-value="Owner">
+                            Owner
+                          </div>
+                          <div class="dropdown-option" data-value="Tenant">
+                            Tenant
+                          </div>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          id="occupiedBy"
+                          name="occupiedBy"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TAB 2 -->
+                <div class="tab-content" data-content="t2">
+                  <div class="row mb-2">
+                    <label
+                      for="generalField1"
+                      class="col-lg-2 col-form-label form-label"
+                    >
+                      General Field 1
+                    </label>
+                    <div class="col-lg-10">
+                      <input
+                        type="text"
+                        id="generalField1"
+                        class="form-control custom-input"
+                        placeholder="General Field 1"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mb-2">
+                    <label
+                      for="generalField2"
+                      class="col-lg-2 col-form-label form-label"
+                    >
+                      General Field 2
+                    </label>
+                    <div class="col-lg-10">
+                      <input
+                        type="text"
+                        id="generalField2"
+                        class="form-control custom-input"
+                        placeholder="General Field 2"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TAB 3 -->
+                <div class="tab-content" data-content="t3">
+                  <div class="row mb-2">
+                    <label
+                      for="propertyType"
+                      class="col-lg-2 col-form-label form-label"
+                    >
+                      Property Type
+                    </label>
+
+                    <div class="col-lg-10">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Property Type
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+
+                          <div class="dropdown-option" data-value="Residential">
+                            Residential
+                          </div>
+                          <div class="dropdown-option" data-value="Commercial">
+                            Commercial
+                          </div>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          id="propertyType"
+                          name="propertyType"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TAB 4 -->
+                <div class="tab-content" data-content="t4">CFM Content</div>
+                <div class="tab-content" data-content="t5">Other Content</div>
+                <div class="tab-content" data-content="t6">
+                  <div class="property-map-wrapper">
+
+  <!-- LEFT INFO -->
+  <div class="property-info">
+    <h3>123 Main Street</h3>
+    <div class="address">Any Town, CA 98765</div>
+
+    <div class="property-grid">
+      <div>
+        <strong>$3,500</strong>
+        <span>Tax Value</span>
+      </div>
+      <div>
+        <strong>$450,000</strong>
+        <span>Market Value</span>
+      </div>
+      <div>
+        <strong>2,450 sq ft</strong>
+        <span>Area</span>
+      </div>
+      <div>
+        <strong>1988</strong>
+        <span>Built Year</span>
+      </div>
+    </div>
+
+    <div class="owner">
+      Owner Name: <strong>John Doe</strong>
+    </div>
+  </div>
+
+  <!-- RIGHT MAP -->
+  <div class="map-container">
+    <!-- Replace with real map later -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91214.47328679622!2d82.90870616421633!3d25.32089492118248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db76febcf4d%3A0x68131710853ff0b5!2sVaranasi%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1765865885684!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="map-controls">
+      <button>+</button>
+      <button>−</button>
+    </div>
+  </div>
+
+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div id="rightContent" class="col-lg-3 col-md-4 col-sm-12">
+            <div class="sticky-card mb-3">
+              <div class="rightContent">
+                <button class="active" data-tab="template">
+                  <i class="fa-solid fa-file-lines"></i> Tpl
+                </button>
+                <button data-tab="main">
+                  <i class="fa-solid fa-circle"></i> Main
+                </button>
+                <button data-tab="o">
+                  <i class="fa-solid fa-ellipsis-h"></i> Oth
+                </button>
+                <button data-tab="casedoc">
+                  <i class="fa-solid fa-folder-open"></i> Doc
+                </button>
+                <button data-tab="casedetails">
+                  <i class="fa-solid fa-info-circle"></i> Det
+                </button>
+              </div>
+
+              <div id="template" class="right-tab-content active">
+                <div class="container___">
+                  <div class="header">Case Template Images</div>
+
+                  <!-- MAIN IMAGE -->
+                  <div class="main-image">
+                    <img
+                      id="mainImg"
+                      src="./assets/image/news_corporate3.jpg"
+                      alt="Case Image"
+                    />
+                    <!-- <div class="marker">X</div>
+      <div class="marker blue">+</div> -->
+                  </div>
+
+                  <!-- INFO BAR -->
+                  <div class="info-bar">
+                    <div>
+                      <strong>LATITUDE</strong>
+                      <span>23.5205303</span>
+                    </div>
+                    <div>
+                      <strong>LONGITUDE</strong>
+                      <span>77.9225200</span>
+                    </div>
+                    <div>
+                      <strong>TIME</strong>
+                      <span>06-Dec-2023</span>
+                    </div>
+                  </div>
+
+                  <!-- THUMBNAILS -->
+                  <div class="thumbs">
+                    <img
+                      src="./assets/image/news_corporate3.jpg"
+                      class="active"
+                      onclick="changeImage(this)"
+                    />
+                    <img
+                      src="./assets/image/news_corporate3.jpg"
+                      onclick="changeImage(this)"
+                    />
+                    <img
+                      src="./assets/image/news_corporate3.jpg"
+                      onclick="changeImage(this)"
+                    />
+                    <img
+                      src="./assets/image/news_corporate3.jpg"
+                      onclick="changeImage(this)"
+                    />
+                    
+                  </div>
+                </div>
+              </div>
+              <div id="main" class="right-tab-content">
+                <p>Main content here...</p>
+              </div>
+              <div id="o" class="right-tab-content">
+                <p>Other content here...</p>
+              </div>
+              <div id="casedoc" class="right-tab-content">
+                <p>Case Doc content here...</p>
+              </div>
+              <div id="casedetails" class="right-tab-content">
+                <p>Case Details content here...</p>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Document Preview</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">Quick document access</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Approval mail</li>
+                  <li class="mb-2">➤ Sanction plan</li>
+                  <li class="mb-2">➤ Fee receipt</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Case Actions</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">Available actions for this case</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Update status</li>
+                  <li class="mb-2">➤ Generate report</li>
+                  <li class="mb-2">➤ Send notification</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Notes & Remarks</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">Internal notes and comments</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ No pending remarks</li>
+                  <li class="mb-2">➤ All approvals received</li>
+                  <li class="mb-2">➤ Ready for processing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  
+    <!-- SCRIPT -->
+    <script></script>
+    <script src="./assets/js/select.js"></script>
+    <script>
+      // Set default state on page load
+      window.addEventListener("DOMContentLoaded", function () {
+        const left = document.getElementById("leftContent");
+        const right = document.getElementById("rightContent");
+        const wrapper = document.querySelector(".layout-wrapper");
+        const overlay = document.getElementById("mobileOverlay");
+
+        left.style.width = "100%"; // Default full width
+        right.style.display = "none"; // Right panel hidden
+        wrapper.style.paddingRight = "0";
+        overlay.style.display = "none";
+      });
+
+      function toggleRightPanel() {
+        const left = document.getElementById("leftContent");
+        const right = document.getElementById("rightContent");
+        const wrapper = document.querySelector(".layout-wrapper");
+        const overlay = document.getElementById("mobileOverlay");
+
+        if (right.style.display === "block") {
+          // CLOSE PANEL
+          right.style.display = "none";
+          left.style.width = "100%";
+          wrapper.style.paddingRight = "0";
+        } else {
+          // OPEN PANEL
+          right.style.display = "block";
+          left.style.width = "75%";
+          right.style.width = "25%";
+          wrapper.style.paddingRight = "29px";
+        }
+      }
+
+      // Handle window resize
+      window.addEventListener("resize", function () {
+        const right = document.getElementById("rightContent");
+
+        if (window.innerWidth >= 992) {
+          //   overlay.style.display = "none";
+        } else if (right.style.display === "block") {
+        }
+      });
+    </script>
+    <script>
+      // LEFT TABS
+      document.querySelectorAll("#leftContent .tab").forEach((tab) => {
+        tab.onclick = () => {
+          document
+            .querySelectorAll("#leftContent .tab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll("#leftContent .tab-content")
+            .forEach((c) => c.classList.remove("active"));
+          tab.classList.add("active");
+          document
+            .querySelector(
+              `#leftContent .tab-content[data-content="${tab.dataset.tab}"]`
+            )
+            .classList.add("active");
+        };
+      });
+
+      // RIGHT TABS
+      document
+        .querySelectorAll("#rightContent .rightContent button")
+        .forEach((btn) => {
+          btn.onclick = () => {
+            const tabName = btn.dataset.tab;
+            document
+              .querySelectorAll("#rightContent .rightContent button")
+              .forEach((b) => b.classList.remove("active"));
+            document
+              .querySelectorAll("#rightContent .right-tab-content")
+              .forEach((c) => c.classList.remove("active"));
+            btn.classList.add("active");
+            document.getElementById(tabName).classList.add("active");
+          };
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Case Details - View</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- MOBILE OVERLAY -->
+    <div id="mobileOverlay"></div>
+    <!-- COLLAPSE BUTTON -->
+    <button class="right-toggle-btn" onclick="toggleRightPanel()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- MOBILE OVERLAY -->
+    <div id="mobileOverlay" onclick="toggleRightPanel()"></div>
+
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="nav">
+          <a id="btnHome" href="index.html" class="nav-item">
+            <i class="fa fa-home"></i>
+          </a>
+
+          <div class="menu-with-sub">
+            <a id="btnAnalytics" class="has-sub nav-item">
+              <i class="fa fa-chart-line"></i>
+            </a>
+
+            <div class="submenu">
+              <a class="sub-item" href="new-case.html" data-page="New Case"
+                >New Case</a
+              >
+              <a class="sub-item" href="view-case.html" data-page="sales"
+                >Allocation</a
+              >
+              <a class="sub-item" href="detail.html" data-page="reports"
+                >Report</a
+              >
+            </div>
+          </div>
+
+          <a id="btnFiles" class="nav-item"><i class="fa fa-folder"></i></a>
+          <a id="btnMessages" class="nav-item"
+            ><i class="fa fa-envelope"></i
+          ></a>
+          <a id="btnSettings" class="nav-item"><i class="fa fa-cog"></i></a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main container-fluid overflow-hidden px-2">
+        <!-- LEFT + RIGHT WRAPPER -->
+        <div class="layout-wrapper">
+          <!-- LEFT CONTENT -->
+          <div id="leftContent">
+            <div class="card border-0 p-3">
+              <h4 class="form-title mb-3">Bank Details</h4>
+
+              <div class="card p-4">
+                <form>
+                  <!-- Bank -->
+                  <div class="row mb-2">
+                    <label for="bank" class="col-lg-2 col-form-label form-label"
+                      >Bank Name</label
+                    >
+                    <div class="col-lg-5">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Valuation Type
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+
+                          <div class="dropdown-option" data-value="OSV">
+                            India Home Mortgage Finance Compnay Limited India
+                          </div>
+                          <div class="dropdown-option" data-value="Other">
+                            Other
+                          </div>
+                        </div>
+
+                        <input type="hidden" id="bank" name="valuationType" />
+                      </div>
+                    </div>
+                    <label
+                      for="zone"
+                      class="col-lg-1 col-form-label form-label"
+                    >
+                      Zone</label
+                    >
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Valuation Type
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="OSV">
+                            Noida Zone
+                          </div>
+                          <div class="dropdown-option" data-value="Other">
+                            Delhi Zone
+                          </div>
+                        </div>
+                        <input type="hidden" id="zone" name="zone" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Branch -->
+                  <div class="row mb-2">
+                    <label
+                      for="branch"
+                      class="col-lg-2 col-form-label form-label"
+                      >Select Branch</label
+                    >
+                    <div class="col-lg-10">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Branch
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="OSV">
+                            Noida Branch
+                          </div>
+                          <div class="dropdown-option" data-value="Other">
+                            Delhi Branch
+                          </div>
+                        </div>
+                        <input type="hidden" id="branch" name="branch" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Valuation Type -->
+                  <div class="row mb-2">
+                    <label for="valuationType" class="col-lg-2 form-label"
+                      >Valuation Type</label
+                    >
+                    <div class="col-lg-10">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Valuation Type
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="OSV">
+                            OSV
+                          </div>
+                          <div class="dropdown-option" data-value="Other">
+                            Other
+                          </div>
+                        </div>
+                        <input
+                          type="hidden"
+                          id="valuationType"
+                          name="valuationType"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Branch Person + Product Type -->
+                  <div class="row mb-2 align-items-center">
+                    <label
+                      for="branchPerson"
+                      class="col-lg-2 col-form-label form-label"
+                      >Select Branch Person</label
+                    >
+                    <div class="col-lg-4 mb-2 mb-sm-0">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Branch Person
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="OSV">
+                            Branch Person 1
+                          </div>
+                          <div class="dropdown-option" data-value="Other">
+                            Branch Person 2
+                          </div>
+                        </div>
+                        <input
+                          type="hidden"
+                          id="branchPerson"
+                          name="branchPerson"
+                        />
+                      </div>
+                    </div>
+
+                    <label
+                      for="productType"
+                      class="col-lg-2 col-form-label form-label text-sm-end form-label"
+                      >Product / Case Type</label
+                    >
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Loan">
+                            Loan
+                          </div>
+                          <div class="dropdown-option" data-value="OSV">
+                            OSV
+                          </div>
+                        </div>
+                        <input
+                          type="hidden"
+                          id="productType"
+                          name="productType"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card border-0 mt-3 p-3">
+              <h4 class="form-title mb-3">Customer Details</h4>
+
+              <div class="card p-4">
+                <form>
+                  <!-- Applicant Name -->
+                  <div class="row mb-2">
+                    <label
+                      for="applicantNameSelect"
+                      class="col-lg-2 col-form-label form-label"
+                      >Applicant Name</label
+                    >
+                    <div class="col-lg-10">
+                      <input
+                        type="text"
+                        id="applicantName"
+                        class="form-control custom-input"
+                        placeholder="Applicant Name"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- State + City -->
+                  <div class="row mb-2">
+                    <label
+                      for="stateSelect"
+                      class="col-lg-2 col-form-label form-label"
+                      >State</label
+                    >
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select State
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="State1">
+                            State 1
+                          </div>
+                          <div class="dropdown-option" data-value="State2">
+                            State 2
+                          </div>
+                        </div>
+                        <input type="hidden" id="stateSelect" name="state" />
+                      </div>
+                    </div>
+
+                    <label
+                      for="citySelect"
+                      class="col-lg-1 col-form-label form-label text-sm-end"
+                      >City</label
+                    >
+                    <div class="col-lg-5">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select City
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="City1">
+                            City 1
+                          </div>
+                          <div class="dropdown-option" data-value="City2">
+                            City 2
+                          </div>
+                        </div>
+                        <input type="hidden" id="citySelect" name="city" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- District -->
+                  <div class="row mb-2">
+                    <label
+                      for="district"
+                      class="col-lg-2 col-form-label form-label"
+                      >District</label
+                    >
+                    <div class="col-lg-10">
+                      <input
+                        type="text"
+                        id="district"
+                        class="form-control custom-input"
+                        placeholder="District"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Locality + Sub Location -->
+                  <div class="row mb-2">
+                    <label
+                      for="localitySelect"
+                      class="col-lg-2 col-form-label form-label"
+                      >Locality</label
+                    >
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Locality
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Locality1">
+                            Locality 1
+                          </div>
+                          <div class="dropdown-option" data-value="Locality2">
+                            Locality 2
+                          </div>
+                        </div>
+                        <input
+                          type="hidden"
+                          id="localitySelect"
+                          name="locality"
+                        />
+                      </div>
+                    </div>
+
+                    <label
+                      for="subLocationSelect"
+                      class="col-lg-2 col-form-label form-label text-sm-end form-label"
+                      >Sub Location</label
+                    >
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Sub Location
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="SubLoc1">
+                            Sub Location 1
+                          </div>
+                          <div class="dropdown-option" data-value="SubLoc2">
+                            Sub Location 2
+                          </div>
+                        </div>
+                        <input
+                          type="hidden"
+                          id="subLocationSelect"
+                          name="subLocation"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Pin Code + Block -->
+                  <div class="row mb-2">
+                    <label
+                      for="pinCode"
+                      class="col-lg-2 col-form-label form-label"
+                      >Pin Code</label
+                    >
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        id="pinCode"
+                        class="form-control custom-input"
+                        placeholder="Pin Code"
+                      />
+                    </div>
+
+                    <label
+                      for="block"
+                      class="col-lg-1 col-form-label form-label text-sm-end"
+                      >Block</label
+                    >
+                    <div class="col-lg-5">
+                      <input
+                        type="text"
+                        id="block"
+                        class="form-control custom-input"
+                        placeholder="Block"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card border-0 mt-3 p-3">
+              <h4 class="form-title mb-2">Fees Details</h4>
+
+              <div class="card p-4">
+                <form>
+                  <!-- Fees Type + Search Btn -->
+                  <div class="row mb-3 align-items-center">
+                    <label
+                      for="feesType"
+                      class="col-lg-2 col-form-label form-label"
+                      >Fees Type
+                    </label>
+
+                    <div class="col-lg-10">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          30
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="30">30</div>
+                          <div class="dropdown-option" data-value="50">50</div>
+                          <div class="dropdown-option" data-value="Custom">
+                            Custom
+                          </div>
+                        </div>
+
+                        <input type="hidden" id="feesType" name="feesType" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Payment Mode -->
+                  <div class="row mb-2">
+                    <label class="col-lg-2 col-form-label form-label"
+                      >Payment Mode</label
+                    >
+
+                    <div class="col-lg-10 d-flex align-items-center gap-4">
+                      <label class="custom-radio d-flex align-items-center">
+                        <input type="radio" name="paymentMode" checked />
+                        Billing
+                      </label>
+
+                      <label class="custom-radio d-flex align-items-center">
+                        <input type="radio" name="paymentMode" />
+                        Advance Fee
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Case Fee -->
+                  <div class="row mb-2">
+                    <label
+                      for="caseFee"
+                      class="col-lg-2 col-form-label form-label"
+                      >Case Fee</label
+                    >
+
+                    <div class="col-lg-10">
+                      <input
+                        type="text"
+                        id="caseFee"
+                        class="form-control custom-input"
+                        placeholder="Case Fee"
+                        value="200"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Extra Fee + Conveyance -->
+                  <div class="row mb-2">
+                    <label
+                      for="extraFee"
+                      class="col-lg-2 col-form-label form-label"
+                      >Extra Fee</label
+                    >
+
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        id="extraFee"
+                        class="form-control custom-input"
+                        placeholder="Extra Fee"
+                        value="0"
+                      />
+                    </div>
+
+                    <label
+                      for="conveyance"
+                      class="col-lg-2 col-form-label form-label text-sm-end"
+                      >Conveyance</label
+                    >
+
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        id="conveyance"
+                        class="form-control custom-input"
+                        placeholder="Conveyance"
+                        value="0"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Total Fees -->
+                  <div class="row mb-2">
+                    <label
+                      for="totalFees"
+                      class="col-lg-2 col-form-label form-label"
+                      >Total Fees</label
+                    >
+
+                    <div class="col-lg-10">
+                      <input
+                        type="text"
+                        id="totalFees"
+                        class="form-control custom-input"
+                        placeholder="Total Fees"
+                        value="200"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Approval Person + Remarks -->
+                  <div class="row mb-2">
+                    <label
+                      for="approvalPerson"
+                      class="col-lg-2 col-form-label form-label"
+                    >
+                      Approval Person <br /><span style="font-size: 12px"
+                        >(if extra fees or conveyance)</span
+                      >
+                    </label>
+
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Approval Person
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Manager1">
+                            Manager 1
+                          </div>
+                          <div class="dropdown-option" data-value="Manager2">
+                            Manager 2
+                          </div>
+                        </div>
+
+                        <input
+                          type="hidden"
+                          id="approvalPerson"
+                          name="approvalPerson"
+                        />
+                      </div>
+                    </div>
+
+                    <label
+                      for="approvalRemarks"
+                      class="col-lg-2 col-form-label form-label text-sm-end"
+                      >Approval Remarks</label
+                    >
+
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        id="approvalRemarks"
+                        class="form-control custom-input"
+                        placeholder="Approval Remarks"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Approval Document -->
+                  <div class="row mb-3">
+                    <label
+                      for="approvalDoc"
+                      class="col-lg-2 col-form-label form-label"
+                    >
+                      Approval Doc<br /><span style="font-size: 12px"
+                        >(Approval Mail / Screenshot etc)</span
+                      >
+                    </label>
+
+                    <div class="col-lg-10">
+                      <input
+                        type="file"
+                        id="approvalDoc"
+                        class="form-control custom-input"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card border-0 mt-3 p-3">
+              <h4 class="form-title mb-3">Other Details</h4>
+
+              <div class="card p-4">
+                <form>
+                  <!-- File No + Property Area -->
+                  <div class="row mb-2">
+                    <label
+                      for="fileNo"
+                      class="col-lg-2 col-form-label form-label"
+                      >Bank / NBFC File Number</label
+                    >
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        id="fileNo"
+                        class="form-control custom-input"
+                        placeholder="File No."
+                      />
+                    </div>
+
+                    <label
+                      for="propertyArea"
+                      class="col-lg-2 col-form-label form-label text-sm-end"
+                      >Property Area</label
+                    >
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        id="propertyArea"
+                        class="form-control custom-input"
+                        placeholder="Property Area"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Status + Status Remark -->
+                  <div class="row mb-2">
+                    <label class="col-lg-2 col-form-label form-label"
+                      >Status</label
+                    >
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Status
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Pending">
+                            Pending
+                          </div>
+                          <div class="dropdown-option" data-value="Completed">
+                            Completed
+                          </div>
+                        </div>
+                        <input type="hidden" id="status" name="status" />
+                      </div>
+                    </div>
+
+                    <label
+                      for="statusRemark"
+                      class="col-lg-2 col-form-label form-label text-sm-end"
+                      >Status Remark</label
+                    >
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        id="statusRemark"
+                        class="form-control custom-input"
+                        placeholder="Status Remark"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Adroit Office + Other -->
+                  <div class="row mb-2">
+                    <label class="col-lg-2 col-form-label form-label"
+                      >Adroit Office</label
+                    >
+                    <div class="col-lg-4">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Office
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Office1">
+                            Office 1
+                          </div>
+                          <div class="dropdown-option" data-value="Office2">
+                            Office 2
+                          </div>
+                        </div>
+                        <input type="hidden" name="adroitOffice" />
+                      </div>
+                    </div>
+
+                    <label
+                      class="col-lg-2 col-form-label form-label text-sm-end"
+                      >Adroit Other Office</label
+                    >
+                    <div class="col-lg-4">
+                      <input
+                        type="text"
+                        class="form-control custom-input"
+                        placeholder="Other Office"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Supervisor / Report Analysis -->
+                  <div class="row mb-2">
+                    <label class="col-lg-2 col-form-label form-label"
+                      >Assign to Supervisor / Report Analysis</label
+                    >
+                    <div class="col-lg-10">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Select Supervisor / Report Analysis
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Supervisor1">
+                            Supervisor 1
+                          </div>
+                          <div class="dropdown-option" data-value="Supervisor2">
+                            Supervisor 2
+                          </div>
+                        </div>
+                        <input type="hidden" name="supervisor" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Remark -->
+                  <div class="row mb-2">
+                    <label
+                      for="remark"
+                      class="col-lg-2 col-form-label form-label"
+                      >Remark</label
+                    >
+                    <div class="col-lg-10">
+                      <input
+                        type="text"
+                        id="remark"
+                        class="form-control custom-input"
+                        placeholder="Remark"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- List of Documents Provided -->
+                  <div class="row mb-2">
+                    <label class="col-lg-2 col-form-label form-label"
+                      >List Of Documents Provided</label
+                    >
+                    <div class="col-lg-10">
+                      <div class="custom-dropdown">
+                        <div class="dropdown-selected">
+                          Document
+                          <span class="dropdown-arrow">
+                            <svg width="15" height="15" viewBox="0 0 12 12">
+                              <path
+                                d="M2 4l4 4 4-4"
+                                stroke="#000"
+                                stroke-width="1"
+                                fill="none"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="dropdown-options">
+                          <!-- 🔍 Search Box -->
+                          <input
+                            type="text"
+                            class="dropdown-search"
+                            placeholder="Search..."
+                          />
+                          <div class="dropdown-option" data-value="Doc1">
+                            Document 1
+                          </div>
+                          <div class="dropdown-option" data-value="Doc2">
+                            Document 2
+                          </div>
+                        </div>
+                        <input type="hidden" name="documents" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Upload Multiple Docs -->
+                  <div class="row mb-2">
+                    <label class="col-lg-2 col-form-label form-label"
+                      >Upload Multiple Documents</label
+                    >
+                    <div class="col-lg-10">
+                      <input
+                        type="file"
+                        class="form-control custom-input"
+                        multiple
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Sanction Plan Doc -->
+                  <div class="row mb-2">
+                    <label class="col-lg-2 col-form-label form-label"
+                      >Sanction Plan Doc</label
+                    >
+                    <div class="col-lg-10">
+                      <input type="file" class="form-control custom-input" />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-lg-12 text-end">
+              <button type="button" class="btn btn-primary fix_btn">
+                <i class="fa-regular fa-circle-check me-2"></i> Submit
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div id="rightContent" class="col-lg-3 col-md-4 col-sm-12">
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Activity Logs</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">Recent case activities</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Case created - 01-Dec-2024</li>
+                  <li class="mb-2">➤ Documents uploaded</li>
+                  <li class="mb-2">➤ Assigned to supervisor</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Document Preview</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">Quick document access</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Approval mail</li>
+                  <li class="mb-2">➤ Sanction plan</li>
+                  <li class="mb-2">➤ Fee receipt</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Case Actions</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">Available actions for this case</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Update status</li>
+                  <li class="mb-2">➤ Generate report</li>
+                  <li class="mb-2">➤ Send notification</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Notes & Remarks</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">Internal notes and comments</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ No pending remarks</li>
+                  <li class="mb-2">➤ All approvals received</li>
+                  <li class="mb-2">➤ Ready for processing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- BOT ICON -->
+    <div class="bot-icon" onclick="toggleChat()">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <!-- CHAT BOX -->
+    <div class="chat-box" id="chatBox">
+      <!-- HEADER -->
+      <div class="chat-header">
+        <div class="header-left">
+          <img src="./assets/image/news_corporate3.jpg" alt="bot" />
+          <div class="header-title">Adroit Technical Services</div>
+        </div>
+        <div class="header-actions">
+          <i class="fa-solid fa-rotate-right" onclick="resetChat()"></i>
+          <i class="fa-solid fa-xmark" onclick="toggleChat()"></i>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div class="chat-body" id="chatBody">
+        <div class="message bot-msg">Hello , i'm here to assist you.</div>
+        <div class="message bot-msg">May I know your name?</div>
+      </div>
+
+      <!-- INPUT -->
+      <div class="chat-footer">
+        <input type="text" placeholder="Type your answer" />
+        <button><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+
+      <div class="chat-powered pb-2">we run on <b>SmatBot</b></div>
+    </div>
+    <!-- SCRIPT -->
+    <script></script>
+    <script src="./assets/js/select.js"></script>
+    <script>
+      // Set default state on page load
+      window.addEventListener("DOMContentLoaded", function () {
+        const left = document.getElementById("leftContent");
+        const right = document.getElementById("rightContent");
+        const wrapper = document.querySelector(".layout-wrapper");
+        const overlay = document.getElementById("mobileOverlay");
+
+        left.style.width = "100%"; // Default full width
+        right.style.display = "none"; // Right panel hidden
+        wrapper.style.paddingRight = "0";
+        overlay.style.display = "none";
+      });
+
+      function toggleRightPanel() {
+        const left = document.getElementById("leftContent");
+        const right = document.getElementById("rightContent");
+        const wrapper = document.querySelector(".layout-wrapper");
+        const overlay = document.getElementById("mobileOverlay");
+
+        if (right.style.display === "block") {
+          // CLOSE PANEL
+          right.style.display = "none";
+          left.style.width = "100%";
+          wrapper.style.paddingRight = "0";
+        } else {
+          // OPEN PANEL
+          right.style.display = "block";
+          left.style.width = "75%";
+          right.style.width = "25%";
+          wrapper.style.paddingRight = "29px";
+        }
+      }
+
+      // Handle window resize
+      window.addEventListener("resize", function () {
+        const right = document.getElementById("rightContent");
+
+        if (window.innerWidth >= 992) {
+          overlay.style.display = "none";
+        } else if (right.style.display === "block") {
+        }
+      });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

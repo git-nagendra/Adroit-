@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Analytics Dashboard — Mock</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- COLLAPSE BUTTON -->
+   <button class="right-toggle-btn" onclick="toggleRightPanel()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- MOBILE OVERLAY -->
+    <div id="mobileOverlay" onclick="toggleRightPanel()"></div>
+
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="nav">
+          <a id="btnHome" href="index.html" class="nav-item">
+            <i class="fa fa-home"></i>
+          </a>
+
+          <div class="menu-with-sub">
+            <a id="btnAnalytics" class="has-sub nav-item">
+              <i class="fa fa-chart-line"></i>
+            </a>
+
+            <div class="submenu">
+              <a class="sub-item" href="new-case.html" data-page="New Case"
+                >New Case</a
+              >
+              <a class="sub-item" href="view-case.html" data-page="sales"
+                >Allocation</a
+              >
+              <a class="sub-item" href="detail.html" data-page="reports"
+                >Report</a
+              >
+            </div>
+          </div>
+
+          <a id="btnFiles" class="nav-item"><i class="fa fa-folder"></i></a>
+          <a id="btnMessages" class="nav-item"
+            ><i class="fa fa-envelope"></i
+          ></a>
+          <a id="btnSettings" class="nav-item"><i class="fa fa-cog"></i></a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main container-fluid overflow-hidden px-2">
+        <!-- LEFT + RIGHT WRAPPER -->
+        <div class="layout-wrapper">
+          <!-- LEFT CONTENT -->
+          <div id="leftContent">
+            <!-- YOUR ORIGINAL LEFT CONTENT START -->
+            <div class="card border-0 mb-2">
+              <div class="card-body">
+                <div
+                  class="case-card d-flex justify-content-between align-items-center flex-wrap"
+                >
+                  <!-- LEFT HEADER PANEL -->
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fa-solid icon_width fa-file-lines"></i>
+
+                    <div>
+                      <div class="case-id">IC/2019-20/0024</div>
+                      <div class="text-muted small">
+                        Created On :
+                        <span class="fw-semibold">28-Nov-2025</span>
+                      </div>
+                      <div class="text-muted small">
+                        Created By :
+                        <span class="fw-semibold">Rohit Kumar Patel</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- RIGHT BUTTONS -->
+                  <div class="d-flex gap-2 mt-3 mt-md-0">
+                    <div class="col-lg-12 text-end">
+                      <button
+                        type="button"
+                        class="btn btn-sm action-btn btn-activity"
+                      >
+                        <i class="fa-solid fa-rotate-left me-1"></i> Activity
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm action-btn btn-pdf"
+                      >
+                        <i class="fa-solid fa-file-pdf me-1"></i> PDF
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm action-btn btn-upload"
+                      >
+                        <i class="fa-solid fa-upload me-1"></i> Upload
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm action-btn btn-update"
+                      >
+                        <i class="fa-solid fa-pencil me-1"></i> Update
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm action-btn btn-log"
+                      >
+                        <i class="fa-solid fa-clipboard-list me-1"></i> Log
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row d-flex flex-wrap g-2">
+              <div class="col-xl-5 col-lg-6 d-flex">
+                <div class="card border-0 w-100">
+                  <div class="card-header py-2 mb-1 d-flex align-items-center">
+                    <h6 class="card-title mb-0 flex-grow-1">Bank Details</h6>
+                  </div>
+
+                  <div class="card-body">
+                    <div class="row gy-2">
+                      <!-- Row -->
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-3 col-12 mb-lg-0 mb-1"
+                          >Bank Name :</span
+                        >
+                        <span class="col-value col-lg-9 col-12">
+                          India Home Mortgage Finance Company Limited India
+                        </span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-3 col-12 mb-lg-0 mb-1"
+                          >Zone :</span
+                        >
+                        <span class="col-lg-9 col-12">Noida Zone</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-3 col-12 mb-lg-0 mb-1"
+                          >Select Branch :</span
+                        >
+                        <span class="col-lg-9 col-12">Noida Branch</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-3 col-12 mb-lg-0 mb-1"
+                          >Valuation Type :</span
+                        >
+                        <span class="col-lg-9 col-12">Marine</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-3 col-12 mb-lg-0 mb-1"
+                          >Branch Person :</span
+                        >
+                        <span class="col-lg-9 col-12"
+                          >Nagendra Kumar Patel</span
+                        >
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-3 col-12 mb-lg-0 mb-1"
+                          >Product / Case Type :</span
+                        >
+                        <span class="col-lg-9 col-12">Property Loan</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-4 col-lg-6 d-flex">
+                <div class="card border-0 w-100">
+                  <div class="card-header py-2 mb-1 d-flex align-items-center">
+                    <h6 class="card-title mb-0 flex-grow-1">Fees Details</h6>
+                  </div>
+
+                  <div class="card-body">
+                    <div class="row gy-2">
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-4 col-12 mb-lg-0 mb-1"
+                          >Fees Type :</span
+                        >
+                        <span class="col-lg-8 col-12">Test Fee Type</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-4 col-12 mb-lg-0 mb-1"
+                          >Case Fee :</span
+                        >
+                        <span class="col-lg-8 col-12">1000</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-4 col-12 mb-lg-0 mb-1"
+                          >Extra Fee :</span
+                        >
+                        <span class="col-lg-8 col-12">500</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-4 col-12 mb-lg-0 mb-1"
+                          >Conveyance :</span
+                        >
+                        <span class="col-lg-8 col-12">300</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-4 col-12 mb-lg-0 mb-1"
+                          >Total Fees :</span
+                        >
+                        <span class="col-lg-8 col-12">1800</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-4 col-12 mb-lg-0 mb-1"
+                          >Approval Person :</span
+                        >
+                        <span class="col-lg-8 col-12">Vikash Kumar Patel</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 d-flex">
+                <div class="card border-0 w-100">
+                  <div class="card-header py-2 mb-1 d-flex align-items-center">
+                    <h6 class="card-title mb-0 flex-grow-1">Case Overview</h6>
+                  </div>
+
+                  <div class="card-body">
+                    <div class="row gy-2">
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-5 col-12 mb-lg-0 mb-1"
+                          >Case Status :</span
+                        >
+                        <span class="col-lg-7 col-12">Na@gmail.com</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-5 col-12 mb-lg-0 mb-1"
+                          >Created On :</span
+                        >
+                        <span class="col-lg-7 col-12">20-Nov-2025</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-5 col-12 mb-lg-0 mb-1"
+                          >Created By :</span
+                        >
+                        <span class="col-lg-7 col-12">Vikash Kumar Patel</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-5 col-12 mb-lg-0 mb-1"
+                          >Adroit Office :</span
+                        >
+                        <span class="col-lg-7 col-12">NCR Adroit</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-5 col-12 mb-lg-0 mb-1"
+                          >Adroit Other Office :</span
+                        >
+                        <span class="col-lg-7 col-12">NA</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-5 col-12 mb-lg-0 mb-1"
+                          >Field Exev. :</span
+                        >
+                        <span class="col-lg-7 col-12">Shivam Kumar</span>
+                      </div>
+
+                      <div class="col-12 d-flex flex-lg-row flex-column">
+                        <span class="text-muted col-lg-5 col-12 mb-lg-0 mb-1"
+                          >Assign to SUP :</span
+                        >
+                        <span class="col-lg-7 col-12">Na@gmail.com</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 d-flex">
+                <div class="card border-0 w-100">
+                  <div class="card-header py-2 mb-1 align-items-center d-flex">
+                    <h6 class="card-title mb-0 flex-grow-1">
+                      Customer Details
+                    </h6>
+                  </div>
+
+                  <div class="card-body">
+                    <div class="row">
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100 mb-2"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >Applicant Name :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >Vikash Kumar Patel</span
+                        >
+                      </div>
+
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100 mb-2"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >State :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >Utter Pradesh</span
+                        >
+                      </div>
+
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100 mb-2"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >City :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >Varanasi</span
+                        >
+                      </div>
+
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100 mb-2"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >District :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >Varanasi</span
+                        >
+                      </div>
+
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100 mb-2"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >Locality :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >Varanasi</span
+                        >
+                      </div>
+
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100 mb-2"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >Sub Location :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >Varanasi</span
+                        >
+                      </div>
+
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100 mb-2"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >Pin Code :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >221402</span
+                        >
+                      </div>
+
+                      <div
+                        class="col-lg-12 d-flex justify-content-between w-100"
+                      >
+                        <span
+                          class="col-label text-muted w-50 w-sm-100 text-start"
+                          >Block :</span
+                        >
+                        <span
+                          class="col-value text-start w-50 w-sm-100 flex-grow-1"
+                          >Bhadohi</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card border-0 w-100">
+                  <div class="card-header py-2 mb-1 align-items-center d-flex">
+                    <h6 class="card-title mb-0 flex-grow-1">
+                      List of Document
+                    </h6>
+                  </div>
+
+                  <div class="card-body pt-0 pb-0">
+                    <div class="row">
+                      <!-- Item 1 -->
+                      <li
+                        class="d-flex justify-content-between align-items-center py-2 border-bottom"
+                      >
+                        <span class="flex-grow-1">
+                          <span class="me-2">•</span> Gift Deed
+                        </span>
+                        <button
+                          class="btn btn-sm rounded-pill px-3 py-0"
+                          style="
+                            background-color: #ffdd6e;
+                            border-color: #ffdd6e;
+                            color: #000;
+                          "
+                        >
+                          View
+                        </button>
+                      </li>
+
+                      <!-- Item 2 -->
+                      <li
+                        class="d-flex justify-content-between align-items-center py-2 border-bottom"
+                      >
+                        <span class="flex-grow-1">
+                          <span class="me-2">•</span> Lease Deed
+                        </span>
+                        <button
+                          class="btn btn-sm rounded-pill px-3 py-0"
+                          style="
+                            background-color: #ffdd6e;
+                            border-color: #ffdd6e;
+                            color: #000;
+                          "
+                        >
+                          View
+                        </button>
+                      </li>
+
+                      <!-- Item 3 -->
+                      <li
+                        class="d-flex justify-content-between align-items-center py-2 border-bottom"
+                      >
+                        <span class="flex-grow-1">
+                          <span class="me-2">•</span> Site Plan
+                        </span>
+                        <button
+                          class="btn btn-sm rounded-pill px-3 py-0"
+                          style="
+                            background-color: #ffdd6e;
+                            border-color: #ffdd6e;
+                            color: #000;
+                          "
+                        >
+                          View
+                        </button>
+                      </li>
+
+                      <!-- Item 4 -->
+                      <li
+                        class="d-flex justify-content-between align-items-center py-2 border-bottom"
+                      >
+                        <span class="flex-grow-1">
+                          <span class="me-2">•</span> OC
+                        </span>
+                        <button
+                          class="btn btn-sm rounded-pill px-3 py-0"
+                          style="
+                            background-color: #ffdd6e;
+                            border-color: #ffdd6e;
+                            color: #000;
+                          "
+                        >
+                          View
+                        </button>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div
+            id="rightContent"
+            class="col-lg-3 col-md-4 col-sm-12 ps-lg-2 mt-3 mt-lg-0"
+          >
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Right Side Panel 1</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">This panel is sticky and collapsible.</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Place activity logs here</li>
+                  <li class="mb-2">➤ Document preview</li>
+                  <li class="mb-2">➤ Case actions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Right Side Panel 2</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">This panel is sticky and collapsible.</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Place activity logs here</li>
+                  <li class="mb-2">➤ Document preview</li>
+                  <li class="mb-2">➤ Case actions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Right Side Panel 3</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">This panel is sticky and collapsible.</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Place activity logs here</li>
+                  <li class="mb-2">➤ Document preview</li>
+                  <li class="mb-2">➤ Case actions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sticky-card card shadow-sm mb-3">
+              <div class="card-header py-2">
+                <h6 class="mb-0">Right Side Panel 4</h6>
+              </div>
+              <div class="card-body">
+                <p class="mb-2">This panel is sticky and collapsible.</p>
+                <hr />
+                <ul class="list-unstyled">
+                  <li class="mb-2">➤ Place activity logs here</li>
+                  <li class="mb-2">➤ Document preview</li>
+                  <li class="mb-2">➤ Case actions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="./assets/js/select.js"></script>
+    <script>
+      // Tab switching functionality with smooth animation
+      const tabs = document.querySelectorAll(".tab");
+      const tableContents = document.querySelectorAll(".table-content");
+      let isAnimating = false;
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Prevent multiple clicks during animation
+          if (isAnimating) return;
+
+          const tabName = tab.getAttribute("data-tab");
+          const currentActive = document.querySelector(".table-content.active");
+          const targetContent = document.getElementById(tabName);
+
+          // If clicking the same tab, do nothing
+          if (currentActive === targetContent) return;
+
+          isAnimating = true;
+
+          // Remove active class from all tabs
+          tabs.forEach((t) => t.classList.remove("active"));
+
+          // Add active class to clicked tab
+          tab.classList.add("active");
+
+          // Add fade-out class to current content
+          currentActive.classList.add("fade-out");
+
+          // After fade out animation completes
+          setTimeout(() => {
+            // Remove active and fade-out from current
+            currentActive.classList.remove("active", "fade-out");
+
+            // Add active to new content (will fade in from right)
+            targetContent.classList.add("active");
+
+            // Reset animation lock after animation completes
+            setTimeout(() => {
+              isAnimating = false;
+            }, 500);
+          }, 500);
+        });
+      });
+    </script>
+    <script>
+      function toggleRightPanel() {
+        const left = document.getElementById("leftContent");
+        const right = document.getElementById("rightContent");
+        const wrapper = document.querySelector(".layout-wrapper");
+
+        if (right.style.display === "block") {
+          // ----- CLOSE PANEL -----
+          right.style.display = "none";
+          left.style.width = "100%";
+
+          // Remove right padding on wrapper
+          wrapper.style.paddingRight = "0";
+        } else {
+          // ----- OPEN PANEL -----
+          right.style.display = "block";
+          left.style.width = "70%";
+          right.style.width = "30%";
+
+          // Add right padding on wrapper to match sidebar
+          wrapper.style.paddingRight = "38px";
+        }
+      }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
